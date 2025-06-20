@@ -1,0 +1,37 @@
+{
+  "name": "strong-humans-foundation",
+  "version": "1.0.0",
+  "description": "Website for Strong Humans Foundation - Empowering veterans, first responders, and their families through wellness initiatives",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000",
+    "test": "echo \"No tests configured\"",
+    "deploy": "echo \"Deploy to GitHub Pages by pushing to main branch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stronghumansfoundation/website.git"
+  },
+  "keywords": [
+    "nonprofit",
+    "veterans",
+    "first-responders",
+    "wellness",
+    "mental-health",
+    "ptsd",
+    "tbi",
+    "foundation",
+    "charity"
+  ],
+  "author": "Strong Humans Foundation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stronghumansfoundation/website/issues"
+  },
+  "homepage": "https://stronghumansfoundation.org",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
