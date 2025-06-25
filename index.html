@@ -260,6 +260,7 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: 0;
+            animation: fadeIn 2s ease-out;
         }
 
         .hero-overlay {
@@ -339,7 +340,7 @@
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-50px, -50px) rotate(180deg); }
+            50% { transform: translate(-30px, -30px) rotate(180deg); }
         }
 
         @media (min-width: 1600px) {
@@ -526,9 +527,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 4rem;
+            gap: 6rem;
             flex-wrap: wrap;
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -549,9 +550,9 @@
         }
 
         .partner-logo-horizontal {
-            width: 200px;
-            height: 150px;
-            margin: 0 auto 1rem;
+            width: 220px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -808,10 +809,11 @@
 
         /* Programs Ticker */
         .programs-ticker {
-            background: linear-gradient(90deg, var(--warm-gold) 0%, #FFD700 50%, var(--warm-gold) 100%);
-            padding: 3rem 0;
+            background: linear-gradient(90deg, var(--primary-navy) 0%, #1a3a52 50%, var(--primary-navy) 100%);
+            padding: 2rem 0;
             overflow: hidden;
             position: relative;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1), 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .programs-ticker::before,
@@ -819,25 +821,25 @@
             content: '';
             position: absolute;
             top: 0;
-            width: 100px;
+            width: 150px;
             height: 100%;
             z-index: 1;
         }
 
         .programs-ticker::before {
             left: 0;
-            background: linear-gradient(90deg, var(--warm-gold), transparent);
+            background: linear-gradient(90deg, var(--primary-navy), transparent);
         }
 
         .programs-ticker::after {
             right: 0;
-            background: linear-gradient(90deg, transparent, var(--warm-gold));
+            background: linear-gradient(90deg, transparent, var(--primary-navy));
         }
 
         .ticker-content {
             display: flex;
-            animation: scroll 30s linear infinite;
-            gap: 4rem;
+            animation: scroll 40s linear infinite;
+            gap: 5rem;
             align-items: center;
         }
 
@@ -848,23 +850,93 @@
 
         .ticker-item {
             flex-shrink: 0;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary-navy);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.15em;
         }
 
-        .ticker-star {
-            color: var(--vibrant-red);
-            font-size: 1.2rem;
+        .ticker-separator {
+            color: var(--warm-gold);
+            font-size: 0.8rem;
+            opacity: 0.6;
         }
 
-        /* Contact Section */
+        /* Nutrition Section */
+        .nutrition {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8fbff 0%, #f0f8ff 100%);
+        }
+
+        .nutrition-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .nutrition-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--forest-green);
+        }
+
+        .nutrition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .nutrition-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--forest-green), #3a7f5f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            box-shadow: 0 5px 20px rgba(42, 95, 63, 0.3);
+        }
+
+        .nutrition-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.25rem;
+        }
+
+        .nutrition-card p {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */ 1.75rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.25rem;
+        }
+
+        .nutrition-card p {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
         .contact {
             background: linear-gradient(135deg, var(--sand) 0%, #FFE8D1 100%);
             padding: 6rem 2rem;
@@ -1205,15 +1277,15 @@
         <div class="header-content">
             <div class="logo-container">
                 <div class="logo-circle">
-                    <!-- Replace with: <img src="images/strong-humans-logo.png" alt="Strong Humans Logo"> -->
-                    <div class="logo-placeholder">SH</div>
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/strong-humans-logo.png" alt="Strong Humans Logo">
                 </div>
                 <a href="#" class="logo">Strong Humans Foundation</a>
             </div>
             <nav class="nav" id="navMenu">
                 <a href="#about">About</a>
                 <a href="#grants">Grants</a>
-                <a href="#gallery">Gallery</a>
+                <a href="#activities">Activities</a>
+                <a href="#nutrition">Nutrition</a>
                 <a href="#contact">Contact</a>
                 <a href="#donate" class="nav-button">Give</a>
             </nav>
@@ -1227,8 +1299,8 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline poster="images/video-poster.jpg">
-            <source src="images/background.mp4" type="video/mp4">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/background.mp4" type="video/mp4">
             <!-- Fallback for browsers that don't support video -->
         </video>
         <div class="hero-overlay"></div>
@@ -1249,9 +1321,9 @@
                 </p>
                 
                 <div class="mission-card">
-                    <h3>How Do We Do It?</h3>
+                    <h3>Our Mission</h3>
                     <p>
-                        We synchronize and enhance already established 501cs through retreats utilizing different modalities of treatment through holistic and natural means (Diet and activities) (ex: horse therapy, scuba diving, hiking, and other healthy activities that speak to or bring peace to the veteran or first responder). Education and practical activities of what you put in your body and what you do with your body (activities) These retreats include Holistic dietitians and counselor/s and a subject matter expert (SME) in the modality that is being conducted.
+                        We synchronize and enhance already established 501(c)(3) organizations through retreats utilizing different modalities of treatment through holistic and natural means. Our approach combines therapeutic activities - from equine therapy and mountain hiking to scuba diving and hunting expeditions - with education on nutrition and healthy living. These retreats include holistic dietitians, counselors, and subject matter experts in each therapeutic modality.
                     </p>
                 </div>
             </div>
@@ -1259,9 +1331,9 @@
     </section>
 
     <!-- Gallery Section 1 -->
-    <section class="gallery-one" id="gallery">
+    <section class="gallery-one" id="activities">
         <div class="section-container">
-            <h2 class="section-title">Our Impact in Action</h2>
+            <h2 class="section-title">Activity Therapy Programs</h2>
             <div class="gallery-showcase">
                 <div class="gallery-image-container">
                     <div class="gallery-image-main add-image-here">
@@ -1270,8 +1342,8 @@
                     </div>
                 </div>
                 <div class="gallery-content">
-                    <h2>Healing Through Nature</h2>
-                    <p>Our outdoor therapy programs connect veterans and first responders with the healing power of nature. Through guided hikes, equine therapy, and wilderness retreats, participants rediscover their strength and find peace in natural settings.</p>
+                    <h2>Healing Through Activity Therapy</h2>
+                    <p>Our comprehensive activity therapy programs connect veterans and first responders with diverse healing experiences. From hiking mountain trails and hunting expeditions to equine therapy and working with therapy animals, each activity is carefully designed to promote healing and personal growth. We also offer unique water-based therapies including scuba diving, surfing, and fishing - all guided by experienced professionals who understand the journey to recovery.</p>
                 </div>
             </div>
         </div>
@@ -1284,23 +1356,14 @@
             <div class="partners-showcase">
                 <div class="partner-item">
                     <div class="partner-logo-horizontal">
-                        <!-- Replace with: <img src="images/strong-humans-retreat-logo.png" alt="Strong Humans Retreat"> -->
-                        <div class="partner-placeholder-h">SHR</div>
-                    </div>
-                    <p class="partner-name">Strong Humans Retreat</p>
-                </div>
-                
-                <div class="partner-item">
-                    <div class="partner-logo-horizontal">
-                        <!-- Replace with: <img src="images/surf-brigade-logo.png" alt="Surf Brigade"> -->
-                        <div class="partner-placeholder-h">SB</div>
+                        <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/surf-brigade-logo.png" alt="Surf Brigade">
                     </div>
                     <p class="partner-name">Surf Brigade</p>
                 </div>
                 
                 <div class="partner-item">
                     <div class="partner-logo-horizontal">
-                        <img src="images/coast-iii-coast-logo.png" alt="Coast III Coast">
+                        <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/coast-iii-coast-logo.png" alt="Coast III Coast">
                     </div>
                     <p class="partner-name">Coast III Coast</p>
                 </div>
@@ -1314,16 +1377,13 @@
             <h2 class="section-title">Community Moments</h2>
             <div class="photo-grid">
                 <div class="photo-item add-image-here">
-                    <!-- Replace with: <img src="images/photo-2.jpg" alt="Community gathering"> -->
-                    <div class="photo-placeholder">Photo 2</div>
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/photo-2.jpg" alt="Community gathering">
                 </div>
                 <div class="photo-item add-image-here">
-                    <!-- Replace with: <img src="images/photo-3.jpg" alt="Wellness activity"> -->
-                    <div class="photo-placeholder">Photo 3</div>
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/photo-3.jpg" alt="Wellness activity">
                 </div>
                 <div class="photo-item add-image-here">
-                    <!-- Replace with: <img src="images/photo-4.jpg" alt="Support group session"> -->
-                    <div class="photo-placeholder">Photo 4</div>
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/photo-4.jpg" alt="Support group session">
                 </div>
             </div>
         </div>
@@ -1335,12 +1395,11 @@
             <h2 class="section-title">Stories of Strength</h2>
             <div class="split-gallery">
                 <div class="split-image add-image-here">
-                    <!-- Replace with: <img src="images/gallery-5.jpg" alt="Veterans in water therapy"> -->
-                    <span>Gallery Image 5</span>
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/gallery-5.jpg" alt="Veterans in water therapy">
                 </div>
                 <div class="split-content">
-                    <h3>Water Therapy Programs</h3>
-                    <p>Our innovative water therapy programs, including surfing and scuba diving experiences, provide unique healing opportunities. The ocean's therapeutic properties combined with expert guidance create transformative experiences for our participants.</p>
+                    <h3>Diverse Therapeutic Activities</h3>
+                    <p>Our innovative therapy programs span land and sea, offering transformative experiences tailored to each participant's journey. Whether it's the meditative rhythm of ocean waves during surf therapy, the profound connection formed through equine partnerships, or the accomplishment felt after a challenging mountain hike, each activity serves as a pathway to healing. We believe in meeting veterans and first responders where they are, providing the therapeutic modality that resonates most deeply with their personal healing process.</p>
                 </div>
             </div>
         </div>
@@ -1367,13 +1426,47 @@
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Do you offer training?</h3>
-                    <p class="faq-answer">Yes, we provide training in holistic wellness practices, nutrition, and various therapeutic activities.</p>
+                    <h3 class="faq-question">What types of activities do you offer?</h3>
+                    <p class="faq-answer">Our activity therapy programs are diverse and tailored to individual needs. We offer hiking, hunting, fishing, scuba diving, surfing, equine therapy, animal therapy, and more. Each retreat features different activities based on participant needs and seasonal availability.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">How can I contribute?</h3>
-                    <p class="faq-answer">You can donate, volunteer, or partner with us to expand our programs and reach more families in need.</p>
+                    <h3 class="faq-question">What is your nutrition program?</h3>
+                    <p class="faq-answer">Our comprehensive nutrition education covers sourcing farm-fresh foods and meal preparation. Participants learn from holistic dietitians about selecting quality ingredients, building relationships with local farmers, and preparing nutritious meals that support healing from TBI and PTSD.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Education Section -->
+    <section class="nutrition" id="nutrition">
+        <div class="section-container">
+            <h2 class="section-title">Farm-Fresh Nutrition Education</h2>
+            <div class="nutrition-content">
+                <div class="nutrition-grid">
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">
+                            <span>🌾</span>
+                        </div>
+                        <h3>Sourcing Farm-Fresh Foods</h3>
+                        <p>Learn how to identify, select, and source the highest quality farm-fresh ingredients. We teach participants how to build relationships with local farmers, navigate farmers' markets, and understand seasonal availability to ensure access to nutrient-dense, healing foods.</p>
+                    </div>
+                    
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">
+                            <span>👨‍🍳</span>
+                        </div>
+                        <h3>Meal Preparation Mastery</h3>
+                        <p>Our hands-on cooking workshops empower participants with practical skills to prepare nutritious, delicious meals using whole, unprocessed ingredients. From basic knife skills to advanced meal planning, we cover everything needed to maintain a healthy diet that supports mental and physical wellness.</p>
+                    </div>
+                    
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">
+                            <span>🥗</span>
+                        </div>
+                        <h3>Holistic Nutrition Guidance</h3>
+                        <p>Working with certified holistic dietitians, participants learn how proper nutrition can aid in managing PTSD and TBI symptoms. We focus on anti-inflammatory foods, gut-brain connection, and personalized nutrition plans that complement each individual's healing journey.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1397,53 +1490,69 @@
     <section class="programs-ticker">
         <div class="ticker-content">
             <div class="ticker-item">
-                <span>Resilience Programs</span>
-                <span class="ticker-star">★</span>
+                <span>Equine Therapy</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Community Support</span>
-                <span class="ticker-star">★</span>
+                <span>Scuba & Diving</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Nutritional Guidance</span>
-                <span class="ticker-star">★</span>
+                <span>Mountain Hiking</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Mental Wellness</span>
-                <span class="ticker-star">★</span>
+                <span>Hunting & Fishing</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Fitness Training</span>
-                <span class="ticker-star">★</span>
+                <span>Farm-Fresh Nutrition</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Youth Empowerment</span>
-                <span class="ticker-star">★</span>
+                <span>Animal Therapy</span>
+                <span class="ticker-separator">•</span>
+            </div>
+            <div class="ticker-item">
+                <span>Surf Therapy</span>
+                <span class="ticker-separator">•</span>
+            </div>
+            <div class="ticker-item">
+                <span>Holistic Wellness</span>
+                <span class="ticker-separator">•</span>
             </div>
             <!-- Duplicate for seamless loop -->
             <div class="ticker-item">
-                <span>Resilience Programs</span>
-                <span class="ticker-star">★</span>
+                <span>Equine Therapy</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Community Support</span>
-                <span class="ticker-star">★</span>
+                <span>Scuba & Diving</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Nutritional Guidance</span>
-                <span class="ticker-star">★</span>
+                <span>Mountain Hiking</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Mental Wellness</span>
-                <span class="ticker-star">★</span>
+                <span>Hunting & Fishing</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Fitness Training</span>
-                <span class="ticker-star">★</span>
+                <span>Farm-Fresh Nutrition</span>
+                <span class="ticker-separator">•</span>
             </div>
             <div class="ticker-item">
-                <span>Youth Empowerment</span>
-                <span class="ticker-star">★</span>
+                <span>Animal Therapy</span>
+                <span class="ticker-separator">•</span>
+            </div>
+            <div class="ticker-item">
+                <span>Surf Therapy</span>
+                <span class="ticker-separator">•</span>
+            </div>
+            <div class="ticker-item">
+                <span>Holistic Wellness</span>
+                <span class="ticker-separator">•</span>
             </div>
         </div>
     </section>
@@ -1480,7 +1589,7 @@
                         </svg>
                         <div class="info-text">
                             <span class="info-label">Phone</span>
-                            555-123-4567
+                            (555) 123-4567
                         </div>
                     </div>
                     
@@ -1490,7 +1599,7 @@
                         </svg>
                         <div class="info-text">
                             <span class="info-label">Email</span>
-                            info@stronghumans.org
+                            info@thestronghumans.org
                         </div>
                     </div>
                     
@@ -1501,7 +1610,7 @@
                         </svg>
                         <div class="info-text">
                             <span class="info-label">Address</span>
-                            123 Charity Lane, Anytown, CA 91234
+                            Denver, Colorado
                         </div>
                     </div>
                     
@@ -1510,8 +1619,8 @@
                             <path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                         <div class="info-text">
-                            <span class="info-label">Hours Open</span>
-                            Mon-Fri: 9am - 5pm
+                            <span class="info-label">Hours</span>
+                            Monday - Friday: 9:00 AM - 5:00 PM
                         </div>
                     </div>
                 </div>
@@ -1526,7 +1635,8 @@
                 <div class="footer-links">
                     <a href="#about">About</a>
                     <a href="#donate">Donate</a>
-                    <a href="#gallery">Gallery</a>
+                    <a href="#activities">Activities</a>
+                    <a href="#nutrition">Nutrition</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
