@@ -1,4 +1,22 @@
-# Strong Humans Foundation Website
+### File Structure
+```
+strong-humans-foundation/
+├── index.html          # Main website file
+├── README.md          # This file
+├── package.json       # Project metadata
+├── CNAME             # Custom domain (optional)
+└── images/           # Create this folder for your images
+    ├── background.mp4                     # Hero video background
+    ├── video-poster.jpg                   # Video poster/fallback image (optional)
+    ├── strong-humans-logo.png
+    ├── surf-brigade-logo.png
+    ├── coast-iii-coast-logo.png
+    ├── gallery-1.jpg     # Activity therapy showcase
+    ├── gallery-5.jpg     # Diverse therapeutic activities
+    ├── army-photo-1.jpg  # Military history photo 1 (horizontal)
+    ├── army-photo-2.jpg  # Military history photo 2 (horizontal)
+    └── army-photo-3.jpg  # Military history photo 3 (horizontal)
+```# Strong Humans Foundation Website
 
 A professional, modern website for the Strong Humans Foundation - a non-profit organization dedicated to empowering veterans, first responders, and their families through wellness initiatives.
 
@@ -8,13 +26,18 @@ A professional, modern website for the Strong Humans Foundation - a non-profit o
 ## 🌟 Features
 
 - **Single Page Application**: Fast, smooth navigation with no page reloads
+- **Full-Screen Video Background**: Immersive hero section with background.mp4
+- **Floating Transparent Header**: Modern glassmorphic navigation bar that adapts on scroll
+- **Professional Typography**: Montserrat headings, Lato body text, Source Serif Pro accents
 - **Vibrant Color Scheme**: Professional design with navy, red, green, and gold accents
-- **Partners Section**: Dedicated area for showcasing organizational partners
-- **Circular Logo Integration**: Header includes space for Strong Humans Retreat logo
+- **Partners Section**: Unique coral-colored section with horizontal partner display
+- **Multiple Gallery Sections**: Activity therapy and diverse therapeutic activities
+- **PayPal Donation Integration**: Direct link to PayPal donation page with email instructions
+- **A History of Strength**: Military service photo gallery with 3 horizontal images
 - **Responsive Design**: Looks great on all devices (desktop, tablet, mobile)
 - **Contact Form**: Ready-to-use contact form with styled info cards
 - **Animated Elements**: Subtle animations including floating backgrounds and hover effects
-- **Programs Ticker**: Eye-catching scrolling banner with programs
+- **Programs Ticker**: Professional scrolling banner with therapy programs
 - **SEO Friendly**: Semantic HTML structure
 
 ## 🚀 Quick Start
@@ -74,11 +97,16 @@ The website has clearly marked locations for images. Look for these comments in 
 
 ### Recommended Image Locations:
 
-- **Logo**: Add your Strong Humans Retreat logo in the header circle (50x50px)
+- **Hero Video**: Add your background.mp4 video file (full-screen background)
+- **Logo**: Add your Strong Humans Retreat logo in the header circle (45x45px)
 - **Partners Section**: Add partner logos (Surf Brigade, Coast III Coast) - 180x180px recommended
-- **News Cards**: Add featured images for each news story (600x400px recommended)
-- **Article Icons**: Replace letters with custom icons or images
-- **Contact Info Cards**: Optional background images for info items
+- **Gallery Images**: 
+  - gallery-1.jpg - Activity therapy showcase
+  - gallery-5.jpg - Diverse therapeutic activities
+- **Military History Photos**: Add 3 horizontal army photos for "A History of Strength" section
+  - army-photo-1.jpg (16:9 aspect ratio recommended)
+  - army-photo-2.jpg (16:9 aspect ratio recommended)
+  - army-photo-3.jpg (16:9 aspect ratio recommended)
 
 ## 📝 Customizing Content
 
@@ -151,12 +179,18 @@ strong-humans-foundation/
 ├── package.json       # Project metadata
 ├── CNAME             # Custom domain (optional)
 └── images/           # Create this folder for your images
+    ├── background.mp4                     # Hero video background
+    ├── video-poster.jpg                   # Video poster/fallback image
     ├── strong-humans-retreat-logo.png
     ├── partners/
     │   ├── surf-brigade-logo.png
     │   └── coast-iii-coast-logo.png
-    ├── news/
-    └── icons/
+    └── gallery/
+        ├── gallery-1.jpg
+        ├── photo-2.jpg
+        ├── photo-3.jpg
+        ├── photo-4.jpg
+        └── gallery-5.jpg
 ```
 
 ### Form Integration
