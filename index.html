@@ -12,20 +12,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        @media (max-width: 600px) {
-            .nav {
-                gap: 1rem;
-            }
-            
-            .nav a {
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 340px) {
-            .logo {
-                display: none;
-            }
         }
 
         :root {
@@ -728,10 +714,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            text-align: left;
         }
 
         @media (max-width: 768px) {
             .split-content {
+                text-align: center;
                 padding: 3rem 2rem;
             }
         }
@@ -740,7 +728,6 @@
             font-size: 2.5rem;
             color: var(--primary-navy);
             margin-bottom: 1.5rem;
-            text-align: center;
         }
 
         .split-content p {
@@ -748,7 +735,6 @@
             font-size: 1.15rem;
             line-height: 1.8;
             color: var(--text-light);
-            text-align: center;
         }
 
         /* FAQ Section */
@@ -1483,12 +1469,6 @@
             }
         }
 
-        @media (max-width: 340px) {
-            .logo {
-                display: none;
-            }
-        }
-
         /* Image Placeholder Styles - Easy to Replace */
         .image-placeholder {
             background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
@@ -1527,7 +1507,7 @@
             <nav class="nav" id="navMenu">
                 <a href="#about">About</a>
                 <a href="#activities">Activities</a>
-                <a href="#grants">Grants & Retreats</a>
+                <a href="#grants">Grants</a>
                 <a href="#nutrition">Nutrition</a>
                 <a href="#donate">Donate</a>
                 <a href="#contact">Contact</a>
@@ -1573,154 +1553,9 @@
                 <div class="mission-card">
                     <h3>Our Mission</h3>
                     <p>
-                        We synchronize and enhance already established 501(c)(3) organizations through retreats utilizing different modalities of treatment through holistic and natural means. Our approach combines therapeutic activities - from equine therapy and mountain hiking to scuba diving and hunting expeditions - with education on nutrition and healthy living. These retreats include holistic dietitians, counselors, and subject matter experts in each therapeutic modality. We provide grants to cover retreat costs for eligible participants, ensuring that healing is accessible to all who have served.
+                        We synchronize and enhance already established 501(c)(3) organizations through retreats utilizing different modalities of treatment through holistic and natural means. Our approach combines therapeutic activities - from equine therapy and mountain hiking to scuba diving and hunting expeditions - with education on nutrition and healthy living. These retreats include holistic dietitians, counselors, and subject matter experts in each therapeutic modality.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Section -->
-    <section class="leadership" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%);">
-        <div class="section-container">
-            <h2 class="section-title">Our Leadership</h2>
-            
-            <style>
-                @media (max-width: 768px) {
-                    .founder-grid {
-                        grid-template-columns: 1fr !important;
-                        text-align: center;
-                    }
-                    .founder-image {
-                        width: 200px !important;
-                        height: 200px !important;
-                    }
-                }
-            </style>
-            
-            <!-- Founder Section -->
-            <div style="max-width: 1000px; margin: 0 auto 4rem;">
-                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--primary-navy); margin-bottom: 2rem; text-align: center;">👤 Meet Our Founder – Kenneth E. Huhman</h3>
-                
-                <div class="founder-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
-                    <div style="text-align: center;">
-                        <div class="founder-image" style="width: 250px; height: 250px; margin: 0 auto; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); background: linear-gradient(135deg, var(--sand), var(--bg-cream));">
-                            <img src="images/ken-huhman.jpg" alt="Kenneth E. Huhman" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <a href="https://www.google.com/search?q=kenneth+huhman" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; color: var(--forest-green); text-decoration: none; font-weight: 600; transition: all 0.3s;">
-                            Learn More →
-                        </a>
-                    </div>
-                    
-                    <div>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem;">
-                            <strong>Ken Huhman</strong> is a retired Chief Master Sergeant with over 30 years of combined service in the U.S. Marine Corps and U.S. Air Force, where he led elite special operations teams around the globe. A decorated combat veteran, Ken served in Afghanistan, Iraq, and numerous high-stakes missions, earning multiple Bronze Stars with Valor.
-                        </p>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem;">
-                            Ken's leadership didn't end with his military service. He's a mentor, a coach, and an advocate for those who continue to fight silent battles at home. His passion for building this foundation came from firsthand experience—witnessing the toll that combat takes on our heroes and the gap in natural, human-centered healing.
-                        </p>
-                        <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light);">
-                            He founded the <strong>Strong Humans Foundation</strong> to give warriors a new mission: healing.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Founder's Testimony -->
-                <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: var(--shadow); border-left: 5px solid var(--forest-green);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--primary-navy); margin-bottom: 1.5rem;">🗣️ Founder's Testimony</h4>
-                    <p style="font-family: 'Source Serif Pro', Georgia, serif; font-size: 1.05rem; line-height: 1.8; color: var(--text-light); font-style: italic; margin-bottom: 1rem;">
-                        <strong>Kenneth E. Huhman</strong> <em>Founder, Strong Humans Foundation</em>
-                    </p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1rem;">
-                        "Through my healing journey—attending retreats and exploring different modalities of therapy—I've discovered that <strong>healing is not a one-size-fits-all solution.</strong> It's a continuous effort, and every person finds it in their own way.
-                    </p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1rem;">
-                        For me, the most powerful breakthroughs have come when I was <strong>eating clean, moving my body in meaningful ways</strong>, and surrounding myself with people who had walked similar paths. That connection—<strong>to others and to nature</strong>—was key. It helped reduce my anger, increase my patience, and bring real peace into my life.
-                    </p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1rem;">
-                        I've experienced firsthand how <strong>natural, holistic living</strong> can transform the way we feel, think, and relate to the world. This internal healing has strengthened my relationships with the people I care most about, and it's given me a deeper appreciation for life itself.
-                    </p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--text-light);">
-                        This is why I built the Strong Humans Foundation: to offer others the chance to find their own healing path, surrounded by people who understand—and know that <strong>you don't have to carry the weight alone.</strong>"
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Board of Directors -->
-            <div>
-                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">🛠️ Board of Directors</h3>
-                <p style="text-align: center; font-family: 'Lato', sans-serif; font-size: 1.1rem; color: var(--text-light); margin-bottom: 3rem;">
-                    Our Foundation is backed by a powerful and compassionate leadership team:
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                    <!-- Kenneth E. Huhman -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Kenneth E. Huhman</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">President/CEO</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Veteran leadership, operations, retreat strategy</p>
-                    </div>
-                    
-                    <!-- Adam Cooper -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Adam Cooper</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Vice President</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Strategic partnerships, veteran support</p>
-                    </div>
-                    
-                    <!-- Erin Jenkins -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Erin Jenkins</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Secretary</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Community relations, nonprofit administration</p>
-                    </div>
-                    
-                    <!-- Desman Adams -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Desman Adams</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">COO/Director</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Mindset coaching, event planning</p>
-                    </div>
-                    
-                    <!-- Joshua Craig -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Joshua Craig</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Director</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Physical wellness, outdoor therapy</p>
-                    </div>
-                    
-                    <!-- Jon Howard -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Jon Howard</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Director</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Legal guidance, nonprofit law</p>
-                    </div>
-                    
-                    <!-- Shane Jenkins -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Shane Jenkins</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Director</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Peer support, veteran outreach</p>
-                    </div>
-                    
-                    <!-- Brian Smith -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">Brian Smith</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Director</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Wellness coaching, program development</p>
-                    </div>
-                    
-                    <!-- CPA TBD -->
-                    <div style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); text-align: center; transition: all 0.3s;">
-                        <h4 style="color: var(--forest-green); font-size: 1.25rem; margin-bottom: 0.5rem;">CPA (TBD)</h4>
-                        <p style="color: var(--vibrant-red); font-weight: 600; margin-bottom: 1rem;">Treasurer/CFO</p>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">Financial management, nonprofit accounting</p>
-                    </div>
-                </div>
-                
-                <p style="text-align: center; font-family: 'Source Serif Pro', Georgia, serif; font-size: 1.3rem; color: var(--primary-navy); margin-top: 3rem; font-weight: 600;">
-                    Together, we are united by one mission: <strong>to heal, empower, and uplift our heroes—mind, body, and spirit.</strong>
-                </p>
             </div>
         </div>
     </section>
@@ -1795,8 +1630,8 @@
                     <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/gallery-2.jpeg" alt="Veterans in water therapy">
                 </div>
                 <div class="split-content">
-                    <h3>Diverse Therapeutic Activities</h3>
-                    <p>Our innovative therapy programs span land and sea, offering transformative experiences tailored to each participant's journey. Whether it's the meditative rhythm of ocean waves during surf therapy, the profound connection formed through equine partnerships, or the accomplishment felt after a challenging mountain hike, each activity serves as a pathway to healing. We believe in meeting veterans and first responders where they are, providing the therapeutic modality that resonates most deeply with their personal healing process.</p>
+                    <h3 style="text-align: center;">Diverse Therapeutic Activities</h3>
+                    <p style="text-align: center;">Our innovative therapy programs span land and sea, offering transformative experiences tailored to each participant's journey. Whether it's the meditative rhythm of ocean waves during surf therapy, the profound connection formed through equine partnerships, or the accomplishment felt after a challenging mountain hike, each activity serves as a pathway to healing. We believe in meeting veterans and first responders where they are, providing the therapeutic modality that resonates most deeply with their personal healing process.</p>
                 </div>
             </div>
         </div>
@@ -1805,7 +1640,7 @@
     <!-- FAQ Section -->
     <section class="faq" id="grants">
         <div class="section-container">
-            <h2 class="section-title">Grants & Retreats FAQ</h2>
+            <h2 class="section-title">Common Inquiries</h2>
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3 class="faq-question">What does your foundation do?</h3>
