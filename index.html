@@ -984,6 +984,19 @@
         }
 
         @media (max-width: 768px) {
+            .board-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .founder-content {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            
+            .founder-testimony {
+                padding: 2rem !important;
+            }
+
             .donation-container {
                 padding: 1.5rem;
             }
@@ -1120,17 +1133,7 @@
             color: var(--text-light);
         }
 
-        /* Contact Section */ 1.75rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.25rem;
-        }
-
-        .nutrition-card p {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
+        /* Contact Section */
         .contact {
             background: linear-gradient(135deg, var(--sand) 0%, #FFE8D1 100%);
             padding: 6rem 2rem;
@@ -1557,6 +1560,137 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f5f8ff 0%, #f0f4f8 100%);">
+        <div class="section-container">
+            <h2 class="section-title">👤 Meet Our Founder – Kenneth E. Huhman</h2>
+            
+            <div class="founder-content" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center;">
+                <div class="founder-image" style="text-align: center;">
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/founder-placeholder.jpg" 
+                         alt="Kenneth E. Huhman" 
+                         style="width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
+                    <a href="https://www.google.com/search?client=safari&channel=iphone_bm&sca_esv=d16c61d435099b34&cs=0&sxsrf=AE3TifMLOQNnH25MynS6uPiofmrfv1ExlA:1751570390367&q=kenneth+huhman&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIetBXe9Do9DAuamxeB-puw_YsNKwkQmpdBnXmV_Wcu-Aa1nyVIpVrAVhGh9a5sak6oMDQ4808q0cXPOP9_Yx_69zFsU-T0VJpZe5p1xrwhUnpqnJSYzG0NIc4F39y8ywMgLRUobp4Qw0ACMF5qrvCEClJIcQC8ddLv3VcWFQ1qM5AYmzT6Jz-DtpXDNlyc45uxEY-YZk&sa=X&ved=2ahUKEwic3KqXtKGOAxWSmYkEHcTPNOoQ0pQJegQIDRAB&biw=390&bih=663&dpr=3" 
+                       target="_blank" 
+                       style="display: inline-block; margin-top: 1rem; color: var(--forest-green); text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                        Learn more about our founder →
+                    </a>
+                </div>
+                
+                <div class="founder-text">
+                    <p style="font-family: 'Lato', sans-serif; font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem;">
+                        <strong>Ken Huhman</strong> is a retired Chief Master Sergeant with over 30 years of combined service in the U.S. Marine Corps and U.S. Air Force, where he led elite special operations teams around the globe. A decorated combat veteran, Ken served in Afghanistan, Iraq, and numerous high-stakes missions, earning multiple Bronze Stars with Valor.
+                    </p>
+                    
+                    <p style="font-family: 'Lato', sans-serif; font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem;">
+                        Ken's leadership didn't end with his military service. He's a mentor, a coach, and an advocate for those who continue to fight silent battles at home. His passion for building this foundation came from firsthand experience—witnessing the toll that combat takes on our heroes and the gap in natural, human-centered healing.
+                    </p>
+                    
+                    <p style="font-family: 'Lato', sans-serif; font-size: 1.15rem; line-height: 1.8; color: var(--text-dark); font-weight: 600;">
+                        He founded the <strong>Strong Humans' Foundation</strong> to give warriors a new mission: healing.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Founder's Testimony -->
+            <div class="founder-testimony" style="max-width: 900px; margin: 4rem auto 0; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-left: 5px solid var(--vibrant-red);">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--primary-navy); margin-bottom: 1.5rem;">🗣️ Founder's Testimony</h3>
+                <p style="font-family: 'Source Serif Pro', Georgia, serif; font-size: 1.1rem; color: var(--forest-green); margin-bottom: 1.5rem; font-weight: 600;">
+                    Kenneth E. Huhman - Founder, Strong Humans' Foundation
+                </p>
+                
+                <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; font-style: italic;">
+                    "Through my healing journey—attending retreats and exploring different modalities of therapy—I've discovered that <strong>healing is not a one-size-fits-all solution.</strong> It's a continuous effort, and every person finds it in their own way.
+                </p>
+                
+                <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; font-style: italic;">
+                    For me, the most powerful breakthroughs have come when I was <strong>eating clean, moving my body in meaningful ways</strong>, and surrounding myself with people who had walked similar paths. That connection—<strong>to others and to nature</strong>—was key. It helped reduce my anger, increase my patience, and bring real peace into my life.
+                </p>
+                
+                <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; font-style: italic;">
+                    I've experienced firsthand how <strong>natural, holistic living</strong> can transform the way we feel, think, and relate to the world. This internal healing has strengthened my relationships with the people I care most about, and it's given me a deeper appreciation for life itself.
+                </p>
+                
+                <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; line-height: 1.8; color: var(--text-light); font-style: italic;">
+                    This is why I built the Strong Humans' Foundation: to offer others the chance to find their own healing path, surrounded by people who understand—and know that <strong>you don't have to carry the weight alone.</strong>"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Directors Section -->
+    <section class="board" style="padding: 6rem 2rem; background: white;">
+        <div class="section-container">
+            <h2 class="section-title">🛠️ Board of Directors</h2>
+            <p style="text-align: center; max-width: 700px; margin: -1rem auto 3rem; font-family: 'Lato', sans-serif; color: var(--text-light); font-size: 1.15rem;">
+                Our Foundation is backed by a powerful and compassionate leadership team:
+            </p>
+            
+            <div class="board-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                <!-- President/CEO -->
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--vibrant-red);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Kenneth E. Huhman</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">President/CEO</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Community relations, nonprofit administration</p>
+                </div>
+                <!-- Vice President -->
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--forest-green);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Adam Cooper</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Vice President</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Strategic partnerships, veteran support</p>
+                </div>
+                <!-- Secretary -->
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--sky-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Erin Jenkins</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Secretary</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Veteran leadership, operations, retreat strategy</p>
+                </div>
+                <!-- COO/Director -->
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--warm-gold);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Desman Adams</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">COO/Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Mindset coaching, event planning</p>
+                </div>
+                
+                <!-- Directors -->
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--coral);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Joshua Craig</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Physical wellness, outdoor therapy</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--teal);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Jon Howard</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Legal guidance, nonprofit law</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--primary-navy);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Shane Jenkins</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Peer support, veteran outreach</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--vibrant-red);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Brian Smith</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Wellness coaching, program development</p>
+                </div>
+                
+                <!-- Treasurer/CFO -->
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--forest-green);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">CPA (TBD)</h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Treasurer/CFO</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Financial management, nonprofit accounting</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; max-width: 700px; margin: 3rem auto 0; font-family: 'Lato', sans-serif; color: var(--text-dark); font-size: 1.15rem; font-weight: 600;">
+                Together, we are united by one mission: <strong>to heal, empower, and uplift our heroes—mind, body, and spirit.</strong>
+            </p>
         </div>
     </section>
 
@@ -2103,4 +2237,3 @@
         });
     </script>
 </body>
-</html>
