@@ -2139,6 +2139,18 @@
                     <!-- IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID -->
                     <form action="https://formspree.io/f/xovwydpa" method="POST">
                         <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="referral">Who referred you to us?</label>
                             <input type="text" id="referral" name="referral" placeholder="Name of person or organization">
                         </div>
@@ -2154,8 +2166,7 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <button type="submit" class="form-button">Send Message</button>
-
+                        <button type="submit" class="form-button">Send Message</button>                            
                     </form>
                 </div>
                 
