@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strong Humans Foundation - Reclaiming Strength Through Natural Healing</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/strong-humans-logo.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/SHFlogo.jpg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&family=Source+Serif+Pro:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap');
 
@@ -574,9 +574,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 6rem;
+            gap: 4rem;
             flex-wrap: wrap;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -589,6 +589,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.3s;
             text-align: center;
+            text-decoration: none;
         }
 
         .partner-item:hover {
@@ -597,9 +598,9 @@
         }
 
         .partner-logo-horizontal {
-            width: 220px;
-            height: 180px;
-            margin: 0 auto 1.5rem;
+            width: 180px;
+            height: 140px;
+            margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -623,7 +624,7 @@
 
         .partner-name {
             font-family: 'Montserrat', serif;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--primary-navy);
         }
@@ -983,6 +984,17 @@
             object-fit: cover;
         }
 
+        .board-member a {
+            color: var(--forest-green);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .board-member a:hover {
+            color: var(--vibrant-red);
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .board-grid {
                 grid-template-columns: 1fr;
@@ -1008,6 +1020,15 @@
             
             .email-addresses {
                 font-size: 0.9rem;
+            }
+
+            .partners-showcase {
+                gap: 2rem;
+            }
+
+            .partner-logo-horizontal {
+                width: 150px;
+                height: 120px;
             }
         }
 
@@ -1495,15 +1516,87 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* Bio Modal Styles */
+        .bio-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s;
+        }
+
+        .bio-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            color: var(--text-light);
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            line-height: 1;
+            padding: 0;
+            background: none;
+            border: none;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: var(--vibrant-red);
+            transform: rotate(90deg);
+        }
+
+        .bio-modal h3 {
+            color: var(--primary-navy);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .bio-modal p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            font-family: 'Lato', sans-serif;
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <div class="logo-container">
                 <div class="logo-circle">
-                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/strong-humans-logo.png" alt="Strong Humans Logo">
+                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/SHFlogo.jpg" alt="Strong Humans Logo">
                 </div>
                 <a href="#" class="logo">Strong Humans Foundation</a>
             </div>
@@ -1523,12 +1616,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/background.mp4" type="video/mp4">
-            <!-- Fallback for browsers that don't support video -->
-        </video>
+            </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>The Strong Humans Foundation</h1>
@@ -1538,14 +1629,12 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
     <section class="mission" id="about">
         <div class="section-container">
             <h2 class="section-title">Our Guiding Light</h2>
             
-            <!-- Logo Section -->
             <div class="logo-large" style="max-width: 400px; margin: 2rem auto 3rem;">
-                <img src="images/logo-big.jpg" alt="Strong Humans Foundation Logo" style="width: 100%; height: auto;">
+                <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/SHFlogo.jpg" alt="Strong Humans Foundation Logo" style="width: 100%; height: auto;">
             </div>
             
             <div class="mission-content">
@@ -1563,7 +1652,6 @@
         </div>
     </section>
 
-    <!-- Founder Section -->
     <section class="founder" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f5f8ff 0%, #f0f4f8 100%);">
         <div class="section-container">
             <h2 class="section-title">👤 Meet Our Founder – Kenneth E. Huhman</h2>
@@ -1595,7 +1683,6 @@
                 </div>
             </div>
             
-            <!-- Founder's Testimony -->
             <div class="founder-testimony" style="max-width: 900px; margin: 4rem auto 0; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-left: 5px solid var(--vibrant-red);">
                 <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--primary-navy); margin-bottom: 1.5rem;">🗣️ Founder's Testimony</h3>
                 <p style="font-family: 'Source Serif Pro', Georgia, serif; font-size: 1.1rem; color: var(--forest-green); margin-bottom: 1.5rem; font-weight: 600;">
@@ -1621,7 +1708,6 @@
         </div>
     </section>
 
-    <!-- Board of Directors Section -->
     <section class="board" style="padding: 6rem 2rem; background: white;">
         <div class="section-container">
             <h2 class="section-title">🛠️ Board of Directors</h2>
@@ -1630,61 +1716,92 @@
             </p>
             
             <div class="board-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                <!-- President/CEO -->
                 <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--vibrant-red);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Kenneth E. Huhman</h4>
-                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">President/CEO</p>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        Kenneth Huhman
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">President</p>
                     <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Community relations, nonprofit administration</p>
                 </div>
-                <!-- Vice President -->
-                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--forest-green);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Adam Cooper</h4>
-                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Vice President</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Strategic partnerships, veteran support</p>
-                </div>
-                <!-- Secretary -->
-                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--sky-blue);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Erin Jenkins</h4>
-                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Secretary</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Veteran leadership, operations, retreat strategy</p>
-                </div>
-                <!-- COO/Director -->
-                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--warm-gold);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Desman Adams</h4>
-                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">COO/Director</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Mindset coaching, event planning</p>
-                </div>
                 
-                <!-- Directors -->
-                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--coral);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Joshua Craig</h4>
-                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--forest-green);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('joshua'); return false;">Joshua Craig</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Vice President</p>
                     <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Physical wellness, outdoor therapy</p>
                 </div>
                 
-                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--teal);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Jon Howard</h4>
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--warm-gold);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('zachary'); return false;">Zachary Hardee</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Treasurer</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Financial management, operations</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--sky-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('erin'); return false;">Erin Jenkins</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Secretary</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Nutrition education, human performance</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--coral);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('desman'); return false;">Desman Adams</a>
+                    </h4>
                     <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Legal guidance, nonprofit law</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Medical services, veteran advocacy</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--teal);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('adam'); return false;">Adam Cooper</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Technology strategy, veteran mentorship</p>
                 </div>
                 
                 <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--primary-navy);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Shane Jenkins</h4>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('brian'); return false;">Brian Smith</a>
+                    </h4>
                     <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Peer support, veteran outreach</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">JTAC instruction, outdoor activities</p>
                 </div>
                 
                 <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--vibrant-red);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">Brian Smith</h4>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('jon'); return false;">Jon Howard</a>
+                    </h4>
                     <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Wellness coaching, program development</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Real estate, hurricane relief, charity work</p>
                 </div>
                 
-                <!-- Treasurer/CFO -->
                 <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--forest-green);">
-                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">CPA (TBD)</h4>
-                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Treasurer/CFO</p>
-                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Financial management, nonprofit accounting</p>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('shane'); return false;">Shane Jenkins</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Faith-based leadership, family support</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--warm-gold);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('jessica'); return false;">Jessica Grantham</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Emergency nursing, trauma care</p>
+                </div>
+                
+                <div class="board-member" style="background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); transition: all 0.3s; border-top: 4px solid var(--sky-blue);">
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-navy); margin-bottom: 0.5rem;">
+                        <a href="#" onclick="openBio('arturo'); return false;">Arturo Ybarra</a>
+                    </h4>
+                    <p style="color: var(--forest-green); font-weight: 600; margin-bottom: 0.75rem;">Director</p>
+                    <p style="font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--text-light); line-height: 1.6;">Special warfare training, veteran mentorship</p>
                 </div>
             </div>
             
@@ -1694,29 +1811,48 @@
         </div>
     </section>
 
-    <!-- Partners Section (moved after Mission) -->
     <section class="partners">
         <div class="section-container">
             <h2 class="section-title">Our Partners</h2>
             <div class="partners-showcase">
-                <div class="partner-item">
+                <a href="https://www.surfbrigade.org" target="_blank" class="partner-item">
                     <div class="partner-logo-horizontal">
                         <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/surf-brigade-logo.png" alt="Surf Brigade">
                     </div>
                     <p class="partner-name">Surf Brigade</p>
-                </div>
+                </a>
                 
-                <div class="partner-item">
+                <a href="https://coastxcoast.org/donate" target="_blank" class="partner-item">
                     <div class="partner-logo-horizontal">
-                        <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/coast-iii-coast-logo.png" alt="Coast II Coast">
+                        <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/coast-iii-coast-logo.png" alt="Coast X Coast">
                     </div>
-                    <p class="partner-name">Coast II Coast</p>
-                </div>
+                    <p class="partner-name">Coast X Coast</p>
+                </a>
+                
+                <a href="https://www.stronghumansfoundation.org/donate" target="_blank" class="partner-item">
+                    <div class="partner-logo-horizontal">
+                        <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/TFDlogo.png" alt="Partner Organization">
+                    </div>
+                    <p class="partner-name">Partner Organization</p>
+                </a>
+                
+                <a href="https://combatcontrolfoundation.org" target="_blank" class="partner-item">
+                    <div class="partner-logo-horizontal">
+                        <span class="partner-placeholder-h">CCF</span>
+                    </div>
+                    <p class="partner-name">Combat Control Foundation</p>
+                </a>
+                
+                <a href="https://reconnaissancefoundation.org" target="_blank" class="partner-item">
+                    <div class="partner-logo-horizontal">
+                        <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/RFlogo.jpg" alt="Reconnaissance Foundation">
+                    </div>
+                    <p class="partner-name">Reconnaissance Foundation</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section 1 -->
     <section class="gallery-one" id="activities">
         <div class="section-container">
             <h2 class="section-title">Activity Therapy Programs</h2>
@@ -1734,7 +1870,6 @@
         </div>
     </section>
 
-    <!-- A History of Strength Section -->
     <section class="photo-feature">
         <div class="section-container">
             <h2 class="section-title">A History of Strength</h2>
@@ -1755,7 +1890,6 @@
         </div>
     </section>
 
-    <!-- Gallery Section 2 -->
     <section class="gallery-two">
         <div class="section-container">
             <h2 class="section-title">Stories of Strength</h2>
@@ -1771,7 +1905,6 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq" id="grants">
         <div class="section-container">
             <h2 class="section-title">Common Inquiries</h2>
@@ -1809,7 +1942,6 @@
         </div>
     </section>
 
-    <!-- Nutrition Education Section (moved after FAQ) -->
     <section class="nutrition" id="nutrition">
         <div class="section-container">
             <h2 class="section-title">Farm-Fresh Nutrition Education</h2>
@@ -1843,7 +1975,6 @@
         </div>
     </section>
     
-    <!-- Donor Recognition Section -->
     <section class="donor-recognition" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%);">
         <div class="section-container">
             <h2 class="section-title">Our Generous Supporters</h2>
@@ -1851,10 +1982,8 @@
                 We are deeply grateful to the individuals and organizations whose generous contributions make our mission possible.
             </p>
             
-            <!-- Donor Tiers -->
             <div class="donor-tiers" style="max-width: 1200px; margin: 0 auto;">
                 
-                <!-- Diamond Tier -->
                 <div class="donor-tier" style="margin-bottom: 3rem;">
                     <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
                         <h3 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #4A5568; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
@@ -1863,7 +1992,6 @@
                         <p style="color: var(--text-light); font-size: 0.95rem;">$15,000 - $20,000</p>
                     </div>
                     <div class="donor-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <!-- Example Diamond Donor - Easy to duplicate -->
                         <div class="donor-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 2px solid #B9D6F3; transition: all 0.3s;">
                             <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">Coming Soon</h4>
@@ -1873,7 +2001,6 @@
                     </div>
                 </div>
                 
-                <!-- Platinum Tier -->
                 <div class="donor-tier" style="margin-bottom: 3rem;">
                     <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
                         <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: #6B7280; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
@@ -1882,7 +2009,6 @@
                         <p style="color: var(--text-light); font-size: 0.95rem;">$10,000 - $15,000</p>
                     </div>
                     <div class="donor-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <!-- Example Platinum Donor -->
                         <div class="donor-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 2px solid #E5E7EB; transition: all 0.3s;">
                             <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem;">Your Organization Here</h4>
@@ -1892,7 +2018,6 @@
                     </div>
                 </div>
                 
-                <!-- Gold Tier -->
                 <div class="donor-tier" style="margin-bottom: 3rem;">
                     <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
                         <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.6rem; color: #D97706; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
@@ -1901,7 +2026,6 @@
                         <p style="color: var(--text-light); font-size: 0.95rem;">$5,000 - $10,000</p>
                     </div>
                     <div class="donor-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
-                        <!-- Example Gold Donor -->
                         <div class="donor-card" style="background: white; padding: 1.75rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 2px solid #FED7AA; transition: all 0.3s;">
                             <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin-bottom: 0.25rem;">Become a Gold Donor</h4>
@@ -1910,7 +2034,6 @@
                     </div>
                 </div>
                 
-                <!-- Silver Tier -->
                 <div class="donor-tier">
                     <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
                         <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: #6B7280; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
@@ -1919,7 +2042,6 @@
                         <p style="color: var(--text-light); font-size: 0.95rem;">$1,000 - $5,000</p>
                     </div>
                     <div class="donor-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
-                        <!-- Example Silver Donor -->
                         <div class="donor-card" style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 1px solid #E5E7EB; transition: all 0.3s;">
                             <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
                                 <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1rem; margin-bottom: 0.25rem;">Join Our Silver Circle</h4>
@@ -1930,7 +2052,6 @@
                 
             </div>
             
-            <!-- Call to Action for Donors -->
             <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
                 <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--primary-navy); margin-bottom: 1rem;">Become a Major Supporter</h3>
                 <p style="font-family: 'Lato', sans-serif; font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -1943,14 +2064,12 @@
         </div>
     </section>
     
-    <!-- CTA Section (moved after Nutrition) -->
     <section class="cta" id="donate">
         <div class="section-container">
             <div class="cta-content">
                 <h2>Give hope, build strength</h2>
                 <p>Empower a strong future. Donate today!</p>
                 
-                <!-- PayPal Donation Button -->
                 <div class="donation-container">
                     <a href="https://www.paypal.com/donate/?hosted_button_id=KFCGB37WAR3DY" 
                        target="_blank" 
@@ -1994,7 +2113,6 @@
         </div>
     </section>
 
-    <!-- Programs Ticker (moved after CTA) -->
     <section class="programs-ticker">
         <div class="ticker-content">
             <div class="ticker-item">
@@ -2029,7 +2147,6 @@
                 <span>Holistic Wellness</span>
                 <span class="ticker-separator">•</span>
             </div>
-            <!-- Duplicate for seamless loop -->
             <div class="ticker-item">
                 <span>Equine Therapy</span>
                 <span class="ticker-separator">•</span>
@@ -2065,7 +2182,6 @@
         </div>
     </section>
 
-    <!-- Retreat Schedule Section -->
     <section class="retreat-schedule">
         <div class="section-container">
             <h2 class="section-title">Strong Humans Upcoming Retreat</h2>
@@ -2128,14 +2244,12 @@
         </div>
     </section>
 
-    <!-- Contact Section (moved to end) -->
     <section class="contact" id="contact">
         <div class="section-container">
             <h2 class="section-title">Connect With Us</h2>
             <div class="contact-grid">
                 <div class="contact-form">
                     <h3>Reach Out Today</h3>
-                    <!-- IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID -->
                     <form action="https://formspree.io/f/xovwydpa" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -2195,7 +2309,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="section-container">
             <div class="footer-content">
@@ -2213,7 +2326,83 @@
         </div>
     </footer>
 
+    <div id="bioModal" class="bio-modal">
+        <div class="bio-modal-content">
+            <button class="close-modal" onclick="closeBio()">&times;</button>
+            <h3 id="bioName"></h3>
+            <div id="bioContent"></div>
+        </div>
+    </div>
+
     <script>
+        // Bio data
+        const bios = {
+            zachary: {
+                name: "Zach Hardee",
+                content: "Zach Hardee brings over 15 years of experience in defense, intelligence, and special operations. He began his career as a U.S. Air Force Combat Controller, serving on five deployments as a Joint Terminal Attack Controller (JTAC) and earning multiple awards for his leadership and performance in complex missions. After nearly a decade in special tactics, Zach transitioned to ISR operations, where he served as a Sensor Operator for L3Harris. Over the course of 18 deployments and more than 4,500 flight hours, he led crews, coordinated missions, and supported both kinetic and non-kinetic operations around the world. Known for his calm leadership, adaptability, and dedication to the mission, Zach continues to apply his experience in high-pressure environments to deliver results."
+            },
+            adam: {
+                name: "Adam Cooper",
+                content: "Adam Cooper is a seasoned military veteran, technologist, and advocate with over 24 years of service and leadership experience. A Bronze Star recipient and proud member of the Air Commando and Combat Control Associations, Adam brings battlefield-tested resilience, strategic vision, and a passion for service to his role in advancing charitable missions. Throughout his career, Adam has led global projects, guided research and development initiatives, and tested complex systems that have supported defense, government, and commercial sectors. He is recognized for his ability to transform cutting-edge technologies—including AI-driven solutions, advanced communications, and edge computing—into practical tools that enhance readiness and improve lives. Beyond his professional accomplishments as a certified PMP and Six Sigma Black Belt, Adam is deeply committed to giving back. He mentors veterans, fosters innovation through collaboration, and champions opportunities that help communities grow stronger and more resilient. Adam holds a Master of Science in Applied Digital Technology with a concentration in AI/ML and a degree in Aeronautical Science from Embry-Riddle. When not supporting missions or mentoring others, he enjoys time with his family and exploring the next wave of innovations that can serve people and communities."
+            },
+            desman: {
+                name: "Desman Adams",
+                content: "Desman Adams is a retired Senior Master Sergeant and Combat Control veteran. He is the Co-Founder and Chief Operating Officer of ExclusIV Medical Services and also serves as an Operations, Training, and Development Specialist (Joint Programs) with Applied Research Associates. Following his participation in the 10-week Post-Deployment Rehabilitation and Evaluation Program at the James A. Haley VA in Tampa, FL, while on active duty, he has become a strong advocate for both active-duty members and veterans, encouraging them to seek the support and resources needed to thrive. He holds a Bachelor's in Strategic Studies from Norwich University and a Master of Business Administration from Louisiana State University–Shreveport."
+            },
+            erin: {
+                name: "Erin Jenkins",
+                content: "Secretary & Nutrition Educator, Strong Humans Erin Jenkins is the Secretary and Nutrition Educator for the Strong Human nonprofit, where she supports veterans, first responders, and their families through holistic health and performance education. A proud member of the Citizen Potawatomi Nation, Erin brings cultural heritage, academic expertise, and military experience to her work in community wellness. Erin is also a Lieutenant Colonel and Aerospace Physiologist in the U.S. Air Force, where she has served two tours as the Physical Domain Lead for Air Force Special Operations Command (AFSOC). In these roles, she spearheaded initiatives that integrated human performance, resilience, and wellness across the force. With over two decades of service, she has dedicated her career to advancing the health and readiness of Airmen through evidence-based strategies that optimize nutrition, recovery, and operational performance. She holds a Master of Science in Exercise Science: Performance Enhancement and Injury Prevention and is currently pursuing a second master's degree in Dietetics. In addition, she is a certified ACSM Exercise Physiologist and an NSCA Certified Strength and Conditioning Specialist (CSCS). Beyond her professional roles, Erin is a wife and mom of four student athletes and an active volunteer with youth programs. These commitments fuel her passion for building stronger, healthier humans—in service, in family, and in community. She believes that people are the most important investment, and she has dedicated her life to helping them reach their fullest potential."
+            },
+            arturo: {
+                name: "Arturo Ybarra",
+                content: "Arturo Ybarra most recently served as the Operations Senior Enlisted Leader (A3 SEL) for the Special Warfare Training Wing at Joint Base San Antonio–Lackland, Texas. In this role, he oversaw readiness and training for more than 500 personnel, driving reforms that streamlined Special Warfare pipelines, reduced timelines by 185 days, and aligned 1,600 operators for future conflict. A Combat Controller by trade, Arturo has completed five combat deployments and more than a dozen overseas assignments across Afghanistan, Africa, and the Indo-Pacific. His experiences at the tactical and strategic levels have reinforced the importance of resilience, teamwork, and community. In addition to his military service, he has worked with defense-focused ventures in the private sector, helping bridge operational requirements with innovative solutions. Arturo's commitment to veteran support is rooted in his own transition story. After initially separating from the Air Force in 2013, he struggled with PTSD, anxiety, and the challenges of reintegration despite strong external circumstances. What helped him navigate this difficult period was finding a tribe - former teammates, close friends, and a community gym - that provided the support and connection he needed. Ultimately, the absence of purpose in civilian work led him back into service, where he rediscovered his mission. Since then, Arturo has become an advocate and mentor for service members preparing to separate, encouraging deliberate planning, healthy living practices, and non-traditional approaches to healing from PTSD and TBI. He is a proud husband to Tamra and father to daughters Elena and Sonia, and he continues to dedicate himself to strengthening people and communities beyond military service."
+            },
+            jessica: {
+                name: "Jessica Grantham",
+                content: "Jessica Grantham, RN, BSN, serves as a Director of the Strong Human Foundation, a nonprofit dedicated to supporting veterans, first responders, and their families in healing and rebuilding the bonds impacted by service. With a background in emergency, trauma, and critical care nursing, Jessica brings both clinical expertise and deep compassion to her leadership role. Her career has been defined by service—whether at the bedside providing lifesaving care or now in the nonprofit space, developing programs that foster resilience and connection. As part of Strong Human Foundation's Board of Directors, she works alongside fellow leaders to carry out the organization's mission: empowering veterans, first responders, and their loved ones to strengthen relationships and embrace healthier living after the challenges of service, TBI, or PTSD. Beyond her professional work, Jessica is a devoted wife and mother who treasures her family deeply. Guided by her faith and believing that God has led her down this path, she is passionate about serving others with kindness and integrity. When she's not working or spending time with loved ones, you can often find her cheering on her favorite football player—her son—or enjoying the simple joys of life with her family."
+            },
+            brian: {
+                name: "Brian Smith",
+                content: "Brian grew up a country boy in Georgia before beginning his military career in the United States Air Force, where he served over 13 years as a Tactical Air Control Party (TACP) member. During his active-duty service, Brian completed a three-year tour in Germany. He currently serves as a JTAC-Instructor with the Georgia Air National Guard and supported contingency operations in Afghanistan from 2018–2019 as a JTAC and advisor. Following his return, he became the first member of the Georgia Air National Guard to graduate from the JTAC Weapons School in 2021. Since 2022, Brian has worked as a military contractor, most recently deploying in support of USASOC operations in the CENTCOM area from 2023 to 2024. Outside of work, he leads an active outdoor lifestyle—hunting, fishing, golfing, and traveling—and has recently embraced western horseback riding and rodeo events such as cowboy mounted shooting and steer wrestling. Passionate about giving back, Brian is committed to helping veterans maintain healthy lifestyles, nurture meaningful relationships, and discover new passions that enrich their lives and support their well-being."
+            },
+            joshua: {
+                name: "Josh Craig",
+                content: "Josh Craig brings over 20 years of frontline experience as a U.S. Air Force Combat Controller, having led elite teams through some of the most complex special operations missions around the world. Now retired as a Chief Master Sergeant, he continues his mission in the civilian world by advocating for the recovery, resilience, and reintegration of veterans, first responders, and their families. A decorated combat veteran with over a dozen combat deployments with multiple Bronze Stars with Valor, Josh is known for his ability to connect people, build trust across silos, and rally diverse teams toward a shared goal, Josh now channels that same energy into supporting veterans, first responders, and their families. Whether coordinating across military, nonprofit, or private-sector communities, he thrives at bringing the right people to the table and aligning efforts that create lasting impact. At his core, Josh is driven by purpose: mentoring others, building communities of support, and ensuring that no one has to walk their recovery alone."
+            },
+            shane: {
+                name: "Shane Jenkins",
+                content: "A devoted husband and father of four, guided by the belief that Faith and Family are the foundation for a meaningful life. Over more than a decade of service as a Pararescueman in the U.S. Air Force, I was shaped by both the battlefield and the home front—learning to balance the demands of service with the unwavering priority of Faith and Family. Today, I carry those experiences forward with the same heart for service — with the goal of helping others find the same balance and peace. Above all, I remain grounded in my faith, and the conviction that true strength comes from serving others."
+            },
+            jon: {
+                name: "Jon Howard",
+                content: "A proud U.S. Air Force veteran whose years in Special Operations as a Combat Controller forged his reputation for grit, precision, and unshakable leadership. Those same qualities now fuel his success as the Principal Broker of Jon Howard Realty and Co-Founder of Howard Vacations, where he has built one of the Gulf Coast's top-performing short-term rental portfolios. But Jon's story doesn't stop at real estate. Service is in his DNA. As a volunteer with the Florida State Guard, he answered the call during Hurricane Helene in North Carolina - carrying out daring rescues that gripped the nation. In the middle of the storm, Jon saved a premature 11-day-old baby and a woman whose oxygen supply was running out. His courage and instinct under pressure earned him nationwide recognition, leading to multiple interviews on Fox News, as well as features on Dr. Phil and The Shawn Ryan Show. Jon is also passionate about giving back long after the cameras fade. Through his bird photography at Jon Howard Art, he donates 100% of profits to support hurricane relief efforts and veteran-focused charities. His lens captures the beauty and resilience of nature and his work ensures those images bring hope and tangible help to others. Today, Jon channels that same drive and heart into guiding homeowners, investors, and guests along Florida's Emerald Coast. Whether it's helping a family secure their dream second home, walking a first-time investor through their rental property, or ensuring every guest's vacation is flawless, Jon brings a hands-on, heart-led approach to everything he does."
+            }
+        };
+
+        function openBio(person) {
+            const modal = document.getElementById('bioModal');
+            const nameElement = document.getElementById('bioName');
+            const contentElement = document.getElementById('bioContent');
+            
+            if (bios[person]) {
+                nameElement.textContent = bios[person].name;
+                contentElement.innerHTML = `<p>${bios[person].content}</p>`;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeBio() {
+            document.getElementById('bioModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('bioModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
         // Mobile menu toggle
         function toggleMenu() {
             const nav = document.getElementById('navMenu');
@@ -2236,8 +2425,6 @@
             });
         });
 
-        // Form submission handler - removed since we're using Formspree
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
@@ -2257,39 +2444,47 @@
         const frequencyInputs = document.querySelectorAll('input[name="frequency"]');
 
         // Handle amount selection
-        amountButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                amountButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                if (this.dataset.amount === 'custom') {
-                    customAmountInput.style.display = 'block';
-                    customAmountField.focus();
-                    selectedAmount = parseInt(customAmountField.value) || 0;
-                } else {
-                    customAmountInput.style.display = 'none';
-                    selectedAmount = parseInt(this.dataset.amount);
-                }
-                updateDonateButton();
+        if (amountButtons.length) {
+            amountButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    amountButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (this.dataset.amount === 'custom') {
+                        customAmountInput.style.display = 'block';
+                        customAmountField.focus();
+                        selectedAmount = parseInt(customAmountField.value) || 0;
+                    } else {
+                        customAmountInput.style.display = 'none';
+                        selectedAmount = parseInt(this.dataset.amount);
+                    }
+                    updateDonateButton();
+                });
             });
-        });
+        }
 
         // Handle custom amount input
-        customAmountField.addEventListener('input', function() {
-            selectedAmount = parseInt(this.value) || 0;
-            updateDonateButton();
-        });
+        if (customAmountField) {
+            customAmountField.addEventListener('input', function() {
+                selectedAmount = parseInt(this.value) || 0;
+                updateDonateButton();
+            });
+        }
 
         // Handle frequency change
-        frequencyInputs.forEach(input => {
-            input.addEventListener('change', updateDonateButton);
-        });
-
+        if (frequencyInputs.length) {
+            frequencyInputs.forEach(input => {
+                input.addEventListener('change', updateDonateButton);
+            });
+        }
+        
         // Update donate button text
         function updateDonateButton() {
-            const frequency = document.querySelector('input[name="frequency"]:checked').value;
-            const frequencyText = frequency === 'monthly' ? '/month' : '';
-            donateButton.textContent = selectedAmount > 0 ? `Donate ${selectedAmount}${frequencyText}` : 'Enter amount';
+            if (donateButton) {
+                const frequency = document.querySelector('input[name="frequency"]:checked').value;
+                const frequencyText = frequency === 'monthly' ? '/month' : '';
+                donateButton.textContent = selectedAmount > 0 ? `Donate ${selectedAmount}${frequencyText}` : 'Enter amount';
+            }
         }
 
         // Stripe Configuration
@@ -2298,57 +2493,60 @@
         
         // Initialize Stripe
         let stripe = null;
-        if (STRIPE_PUBLISHABLE_KEY !== 'pk_test_YOUR_PUBLISHABLE_KEY_HERE') {
+        if (typeof Stripe !== 'undefined' && STRIPE_PUBLISHABLE_KEY !== 'pk_test_YOUR_PUBLISHABLE_KEY_HERE') {
             stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
         }
 
         // Handle donation
-        donateButton.addEventListener('click', async function() {
-            if (selectedAmount <= 0) {
-                alert('Please select or enter a donation amount.');
-                return;
-            }
-
-            if (!stripe) {
-                alert('Stripe is not configured. Please add your Stripe publishable key to enable donations.');
-                return;
-            }
-
-            // Disable button and show loading state
-            this.disabled = true;
-            this.textContent = 'Processing...';
-
-            try {
-                // Create a checkout session on your server
-                const response = await fetch('/create-checkout-session', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        amount: selectedAmount,
-                        frequency: document.querySelector('input[name="frequency"]:checked').value
-                    }),
-                });
-
-                const session = await response.json();
-
-                // Redirect to Stripe Checkout
-                const result = await stripe.redirectToCheckout({
-                    sessionId: session.id,
-                });
-
-                if (result.error) {
-                    alert(result.error.message);
+        if (donateButton) {
+            donateButton.addEventListener('click', async function() {
+                if (selectedAmount <= 0) {
+                    alert('Please select or enter a donation amount.');
+                    return;
                 }
-            } catch (error) {
-                alert('An error occurred. Please try again or contact us directly.');
-                console.error('Donation error:', error);
-            } finally {
-                // Re-enable button
-                this.disabled = false;
-                updateDonateButton();
-            }
-        });
+
+                if (!stripe) {
+                    alert('Stripe is not configured. Please add your Stripe publishable key to enable donations.');
+                    return;
+                }
+
+                // Disable button and show loading state
+                this.disabled = true;
+                this.textContent = 'Processing...';
+
+                try {
+                    // Create a checkout session on your server
+                    const response = await fetch('/create-checkout-session', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            amount: selectedAmount,
+                            frequency: document.querySelector('input[name="frequency"]:checked').value
+                        }),
+                    });
+
+                    const session = await response.json();
+
+                    // Redirect to Stripe Checkout
+                    const result = await stripe.redirectToCheckout({
+                        sessionId: session.id,
+                    });
+
+                    if (result.error) {
+                        alert(result.error.message);
+                    }
+                } catch (error) {
+                    alert('An error occurred. Please try again or contact us directly.');
+                    console.error('Donation error:', error);
+                } finally {
+                    // Re-enable button
+                    this.disabled = false;
+                    updateDonateButton();
+                }
+            });
+        }
     </script>
 </body>
+</html>
