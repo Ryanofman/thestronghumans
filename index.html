@@ -451,6 +451,105 @@
             box-shadow: var(--shadow);
         }
 
+        .retreat-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .retreat-tab {
+            padding: 0.75rem 1.75rem;
+            border-radius: 999px;
+            border: 2px solid var(--forest-green);
+            background: transparent;
+            color: var(--forest-green);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .retreat-tab:hover,
+        .retreat-tab:focus {
+            outline: none;
+            background: rgba(42, 95, 63, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .retreat-tab.active {
+            background: var(--forest-green);
+            color: white;
+            box-shadow: 0 10px 25px rgba(42, 95, 63, 0.2);
+        }
+
+        .tab-panels {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .retreat-panel {
+            display: none;
+        }
+
+        .retreat-panel.active {
+            display: block;
+        }
+
+        .retreat-schedule-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--forest-green);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(42, 95, 63, 0.4);
+            padding-bottom: 0.25rem;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .retreat-schedule-link:hover {
+            color: var(--vibrant-red);
+            border-color: rgba(215, 53, 40, 0.5);
+        }
+
+        .retreat-gallery {
+            max-width: 1000px;
+            margin: 3rem auto 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .retreat-gallery figure {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .retreat-gallery figure:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+        }
+
+        .retreat-gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .retreat-gallery figcaption {
+            padding: 0.9rem 1rem 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+        }
+
         .retreat-tagline {
             text-align: center;
             font-family: 'Source Serif Pro', Georgia, serif;
@@ -889,36 +988,43 @@
             box-shadow: 0 10px 40px rgba(215, 53, 40, 0.6);
         }
 
-        .donation-instructions {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
+        .bank-details {
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: left;
         }
 
-        .instruction-text {
-            color: white;
-            font-size: 1rem;
+        .bank-details h4 {
+            font-size: 1.2rem;
             margin-bottom: 0.75rem;
-            opacity: 0.95;
-        }
-
-        .email-addresses {
-            font-size: 1rem;
-            color: var(--warm-gold);
-        }
-
-        .email-addresses a {
-            color: var(--warm-gold);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .email-addresses a:hover {
             color: white;
-            text-decoration: underline;
+        }
+
+        .bank-details p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .donation-statement {
+            margin-top: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 14px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .donation-container .donation-statement {
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .donation-secure {
@@ -1921,7 +2027,7 @@
                 
                 <div class="faq-item">
                     <h3 class="faq-question">How do I apply for a retreat grant?</h3>
-                    <p class="faq-answer">To apply for a grant to attend our retreats, please use the Contact form below or email us directly at huhmank@gmail.com. Include information about your service background and how our programs could support your healing journey. We'll guide you through the application process.</p>
+                    <p class="faq-answer">To apply for a grant to attend our retreats, please use the Contact form below or email us directly at thestronghumans@gmail.com. Include information about your service background and how our programs could support your healing journey. We'll guide you through the application process.</p>
                 </div>
                 
                 <div class="faq-item">
@@ -2081,15 +2187,16 @@
                         </svg>
                         Donate with PayPal
                     </a>
-                    
-                    <div class="donation-instructions">
-                        <p class="instruction-text">
-                            <strong>Important:</strong> Please forward your donation receipt/confirmation to:
-                        </p>
-                        <div class="email-addresses">
-                            <a href="mailto:huhmank@gmail.com">huhmank@gmail.com</a> & 
-                            <a href="mailto:joe@coastxcoast.org">joe@coastxcoast.org</a>
-                        </div>
+
+                    <div class="bank-details">
+                        <h4>Strong Humans Business Account</h4>
+                        <p><strong>Routing #:</strong> 063107513</p>
+                        <p><strong>Account #:</strong> 5761237543</p>
+                        <p>For ACH or wire transfers, please include "Strong Humans Donation" in the memo line.</p>
+                    </div>
+
+                    <div class="donation-statement">
+                        We are in the process of obtaining our 501(c)(3) status from the Internal Revenue Service. IRS Pub. 557 indicates that the effective date of our exemption will be retroactive to our date of incorporation, which is August 15, 2025. Donations may be tax-exempt.
                     </div>
                     
                     <p class="donation-secure">
@@ -2189,56 +2296,82 @@
             <p style="text-align: center; max-width: 700px; margin: -1rem auto 2rem; font-family: 'Lato', sans-serif; color: var(--text-light); font-size: 1.1rem;">
                 Join us for our next transformative retreat experience. This schedule represents our upcoming retreat itinerary, designed to provide comprehensive healing through natural therapeutic activities.
             </p>
-            <div class="retreat-schedule-content">
-                <div class="schedule-day">
-                    <h3>Day 1</h3>
-                    <ul>
-                        <li>• Arrive NLT 1700</li>
-                        <li>• Evening (TBD) activity w/Coast II Coast</li>
-                    </ul>
-                </div>
-                
-                <div class="schedule-day">
-                    <h3>Day 2</h3>
-                    <ul>
-                        <li>• Circle Sharing Post event w/Coast II Coast</li>
-                        <li>• (TBD) Farm Fresh Brunch (1 x attendee team help prepare)</li>
-                        <li>• (TBD) Self-Myofascial release</li>
-                        <li>• (2hrs Prior to Sunset) Surf Therapy</li>
-                        <li>• (TBD) Beach Bonfire w/Catered Dinner (w/sharing circle)</li>
-                    </ul>
-                </div>
-                
-                <div class="schedule-day">
-                    <h3>Day 3</h3>
-                    <ul>
-                        <li>• (TBD) Farm Fresh Breakfast (1 x attendee team help prepare)</li>
-                        <li>• (TBD) Self-Myofascial release</li>
-                        <li>• (TBD) Surf Therapy</li>
-                        <li>• (TBD) Farm Fresh Lunch (1 x attendee team help prepare)</li>
-                        <li>• Evening (TBD) activity w/Coast II Coast</li>
-                    </ul>
-                </div>
-                
-                <div class="schedule-day">
-                    <h3>Day 4</h3>
-                    <ul>
-                        <li>• Circle Sharing Post activity event w/Coast II Coast</li>
-                        <li>• (TBD) Farm Fresh Brunch (1 x attendee team help prepare)</li>
-                        <li>• (TBD) Self-Myofascial release</li>
-                        <li>• (TBD) IV Therapy</li>
-                        <li>• (TBD) Paddle Boarding and Yoga</li>
-                        <li>• (TBD) Farm Fresh Dinner (1 x attendee team help prepare)</li>
-                        <li>• (TBD) Sharing Circle</li>
-                    </ul>
-                </div>
-                
-                <div class="schedule-day">
-                    <h3>Day 5</h3>
-                    <ul>
-                        <li>• (TBD) Farm Fresh Breakfast</li>
-                        <li>• Depart</li>
-                    </ul>
+            <div class="retreat-gallery">
+                <figure>
+                    <img src="newimages/retreat2.jpg" alt="Strong Humans retreat participants gathered on the beach at sunset" loading="lazy">
+                    <figcaption>Sunset reflection circle during our inaugural retreat.</figcaption>
+                </figure>
+                <figure>
+                    <img src="newimages/retreat3.jpg" alt="Retreat guests sharing a meal outdoors" loading="lazy">
+                    <figcaption>Nourishing meals prepared and shared as a community.</figcaption>
+                </figure>
+                <figure>
+                    <img src="newimages/retreat4.jpg" alt="Morning mindfulness session overlooking the water" loading="lazy">
+                    <figcaption>Mindfulness and movement sessions to start the day.</figcaption>
+                </figure>
+                <figure>
+                    <img src="newimages/retreat6.jpg" alt="Group of participants wading into the ocean for surf therapy" loading="lazy">
+                    <figcaption>Surf therapy bringing our team together on the Gulf Coast.</figcaption>
+                </figure>
+            </div>
+            <div class="retreat-tabs" role="tablist" aria-label="Retreat schedules by date">
+                <button type="button" class="retreat-tab active" data-panel="retreat-panel-sept-2025">Sept 2025</button>
+            </div>
+            <div class="tab-panels">
+                <div class="retreat-panel active" id="retreat-panel-sept-2025" role="tabpanel" aria-label="September 2025 retreat schedule">
+                    <a class="retreat-schedule-link" href="#sept-2025-schedule">View the September 2025 itinerary</a>
+                    <div class="retreat-schedule-content" id="sept-2025-schedule">
+                        <div class="schedule-day">
+                            <h3>Day 1</h3>
+                            <ul>
+                                <li>• Arrive NLT 1700</li>
+                                <li>• Evening (TBD) activity w/Coast II Coast</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="schedule-day">
+                            <h3>Day 2</h3>
+                            <ul>
+                                <li>• Circle Sharing Post event w/Coast II Coast</li>
+                                <li>• (TBD) Farm Fresh Brunch (1 x attendee team help prepare)</li>
+                                <li>• (TBD) Self-Myofascial release</li>
+                                <li>• (2hrs Prior to Sunset) Surf Therapy</li>
+                                <li>• (TBD) Beach Bonfire w/Catered Dinner (w/sharing circle)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="schedule-day">
+                            <h3>Day 3</h3>
+                            <ul>
+                                <li>• (TBD) Farm Fresh Breakfast (1 x attendee team help prepare)</li>
+                                <li>• (TBD) Self-Myofascial release</li>
+                                <li>• (TBD) Surf Therapy</li>
+                                <li>• (TBD) Farm Fresh Lunch (1 x attendee team help prepare)</li>
+                                <li>• Evening (TBD) activity w/Coast II Coast</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="schedule-day">
+                            <h3>Day 4</h3>
+                            <ul>
+                                <li>• Circle Sharing Post activity event w/Coast II Coast</li>
+                                <li>• (TBD) Farm Fresh Brunch (1 x attendee team help prepare)</li>
+                                <li>• (TBD) Self-Myofascial release</li>
+                                <li>• (TBD) IV Therapy</li>
+                                <li>• (TBD) Paddle Boarding and Yoga</li>
+                                <li>• (TBD) Farm Fresh Dinner (1 x attendee team help prepare)</li>
+                                <li>• (TBD) Sharing Circle</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="schedule-day">
+                            <h3>Day 5</h3>
+                            <ul>
+                                <li>• (TBD) Farm Fresh Breakfast</li>
+                                <li>• Depart</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2301,7 +2434,7 @@
                         </svg>
                         <div class="info-text">
                             <span class="info-label">Email</span>
-                            huhmank@gmail.com
+                            <a href="mailto:thestronghumans@gmail.com">thestronghumans@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -2434,6 +2567,27 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Retreat schedule tabs
+        const retreatTabs = document.querySelectorAll('.retreat-tab');
+        const retreatPanels = document.querySelectorAll('.retreat-panel');
+
+        if (retreatTabs.length) {
+            retreatTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-panel');
+
+                    retreatTabs.forEach(t => t.classList.remove('active'));
+                    retreatPanels.forEach(panel => panel.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const activePanel = document.getElementById(target);
+                    if (activePanel) {
+                        activePanel.classList.add('active');
+                    }
+                });
+            });
+        }
 
         // Donation Form Logic
         let selectedAmount = 100;
