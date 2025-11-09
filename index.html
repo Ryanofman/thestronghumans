@@ -542,12 +542,14 @@
             display: block;
         }
 
-        .retreat-gallery figcaption {
-            padding: 0.9rem 1rem 1.2rem;
-            font-size: 0.9rem;
+        .retreat-highlight {
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+            font-family: 'Source Serif Pro', Georgia, serif;
+            font-size: 1.05rem;
             color: var(--text-light);
-            font-family: 'Lato', sans-serif;
             text-align: center;
+            font-style: italic;
         }
 
         .retreat-tagline {
@@ -986,28 +988,6 @@
         .paypal-donate:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 40px rgba(215, 53, 40, 0.6);
-        }
-
-        .bank-details {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 14px;
-            padding: 1.75rem;
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.95);
-            text-align: left;
-        }
-
-        .bank-details h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: white;
-        }
-
-        .bank-details p {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.02em;
         }
 
         .donation-statement {
@@ -1711,6 +1691,7 @@
                 <a href="#activities">Activities</a>
                 <a href="#grants">Grants</a>
                 <a href="#nutrition">Nutrition</a>
+                <a href="#retreat">Retreat</a>
                 <a href="#contact">Contact</a>
                 <a href="#donate" class="nav-button">Sponsor</a>
             </nav>
@@ -2177,7 +2158,7 @@
                 <p>Empower a strong future. Donate today!</p>
                 
                 <div class="donation-container">
-                    <a href="https://www.paypal.com/donate/?hosted_button_id=KFCGB37WAR3DY" 
+                    <a href="https://paypal.me/thestronghumans" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        class="cta-button paypal-donate">
@@ -2185,15 +2166,8 @@
                             <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72c.044-.244.268-.413.52-.413h7.114c2.96 0 5.26.938 6.845 2.788 1.273 1.488 1.776 3.584 1.486 6.233-.36 3.3-2.48 5.765-5.774 6.74-.83.245-1.73.368-2.678.368H9.88a.64.64 0 0 0-.633.513l-.928 5.388z"/>
                             <path d="M20.283 8.487c-.3 2.747-2.13 4.796-4.968 5.614-.73.21-1.52.316-2.35.316h-2.214a.562.562 0 0 0-.556.45l-1.166 6.755a.562.562 0 0 1-.555.45H6.097c-.309 0-.558-.25-.504-.559l.103-.597h1.98a.641.641 0 0 0 .633-.513l.928-5.388a.641.641 0 0 1 .633-.513h2.577c.948 0 1.848-.123 2.678-.368 3.294-.975 5.414-3.44 5.774-6.74.144-1.32.03-2.457-.416-3.387.796 1.016 1.104 2.374.8 4.13z"/>
                         </svg>
-                        Donate with PayPal
+                        Donate via PayPal.me
                     </a>
-
-                    <div class="bank-details">
-                        <h4>Strong Humans Business Account</h4>
-                        <p><strong>Routing #:</strong> 063107513</p>
-                        <p><strong>Account #:</strong> 5761237543</p>
-                        <p>For ACH or wire transfers, please include "Strong Humans Donation" in the memo line.</p>
-                    </div>
 
                     <div class="donation-statement">
                         We are in the process of obtaining our 501(c)(3) status from the Internal Revenue Service. IRS Pub. 557 indicates that the effective date of our exemption will be retroactive to our date of incorporation, which is August 15, 2025. Donations may be tax-exempt.
@@ -2289,7 +2263,7 @@
         </div>
     </section>
 
-    <section class="retreat-schedule">
+    <section class="retreat-schedule" id="retreat">
         <div class="section-container">
             <h2 class="section-title">Strong Humans Upcoming Retreat</h2>
             <p class="retreat-tagline">Strong Minds. Strong Bodies. Strong Humans.</p>
@@ -2299,21 +2273,18 @@
             <div class="retreat-gallery">
                 <figure>
                     <img src="newimages/retreat2.jpg" alt="Strong Humans retreat participants gathered on the beach at sunset" loading="lazy">
-                    <figcaption>Sunset reflection circle during our inaugural retreat.</figcaption>
                 </figure>
                 <figure>
                     <img src="newimages/retreat3.jpg" alt="Retreat guests sharing a meal outdoors" loading="lazy">
-                    <figcaption>Nourishing meals prepared and shared as a community.</figcaption>
                 </figure>
                 <figure>
                     <img src="newimages/retreat4.jpg" alt="Morning mindfulness session overlooking the water" loading="lazy">
-                    <figcaption>Mindfulness and movement sessions to start the day.</figcaption>
                 </figure>
                 <figure>
                     <img src="newimages/retreat6.jpg" alt="Group of participants wading into the ocean for surf therapy" loading="lazy">
-                    <figcaption>Surf therapy bringing our team together on the Gulf Coast.</figcaption>
                 </figure>
             </div>
+            <p class="retreat-highlight">Sunset reflection circles on the Gulf Coast help our participants process the day and recharge together.</p>
             <div class="retreat-tabs" role="tablist" aria-label="Retreat schedules by date">
                 <button type="button" class="retreat-tab active" data-panel="retreat-panel-sept-2025">Sept 2025</button>
             </div>
@@ -2328,6 +2299,7 @@
                                 <li>• Evening (TBD) activity w/Coast II Coast</li>
                             </ul>
                         </div>
+                        <p class="retreat-highlight">We gather each evening for a relaxed reflection circle, sharing stories as the sun sets.</p>
                         
                         <div class="schedule-day">
                             <h3>Day 2</h3>
@@ -2339,6 +2311,7 @@
                                 <li>• (TBD) Beach Bonfire w/Catered Dinner (w/sharing circle)</li>
                             </ul>
                         </div>
+                        <p class="retreat-highlight">Community meals are prepared together, turning nourishment into another moment of connection.</p>
                         
                         <div class="schedule-day">
                             <h3>Day 3</h3>
@@ -2350,6 +2323,7 @@
                                 <li>• Evening (TBD) activity w/Coast II Coast</li>
                             </ul>
                         </div>
+                        <p class="retreat-highlight">Morning mindfulness along the water sets a calm, grounded tone for the day’s activities.</p>
                         
                         <div class="schedule-day">
                             <h3>Day 4</h3>
@@ -2363,6 +2337,7 @@
                                 <li>• (TBD) Sharing Circle</li>
                             </ul>
                         </div>
+                        <p class="retreat-highlight">Surf therapy sessions keep everyone smiling and remind us of the restorative power of the ocean.</p>
                         
                         <div class="schedule-day">
                             <h3>Day 5</h3>
