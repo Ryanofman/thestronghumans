@@ -2551,6 +2551,18 @@
             retreatTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     const target = tab.getAttribute('data-panel');
+                    const activePanel = document.getElementById(target);
+                    const isActive = tab.classList.contains('active');
+
+                    if (isActive) {
+                        tab.classList.remove('active');
+                        tab.setAttribute('aria-expanded', 'false');
+                        if (activePanel) {
+                            activePanel.classList.remove('active');
+                            activePanel.hidden = true;
+                        }
+                        return;
+                    }
 
                     retreatTabs.forEach(t => {
                         t.classList.remove('active');
@@ -2563,7 +2575,6 @@
 
                     tab.classList.add('active');
                     tab.setAttribute('aria-expanded', 'true');
-                    const activePanel = document.getElementById(target);
                     if (activePanel) {
                         activePanel.classList.add('active');
                         activePanel.hidden = false;
