@@ -2286,10 +2286,10 @@
             </div>
             <p class="retreat-highlight">Sunset reflection circles on the Gulf Coast help our participants process the day and recharge together.</p>
             <div class="retreat-tabs" role="tablist" aria-label="Retreat schedules by date">
-                <button type="button" class="retreat-tab active" data-panel="retreat-panel-sept-2025">Sept 2025</button>
+                <button type="button" class="retreat-tab" data-panel="retreat-panel-sept-2025" aria-expanded="false">Sept 2025</button>
             </div>
             <div class="tab-panels">
-                <div class="retreat-panel active" id="retreat-panel-sept-2025" role="tabpanel" aria-label="September 2025 retreat schedule">
+                <div class="retreat-panel" id="retreat-panel-sept-2025" role="tabpanel" aria-label="September 2025 retreat schedule" hidden>
                     <a class="retreat-schedule-link" href="#sept-2025-schedule">View the September 2025 itinerary</a>
                     <div class="retreat-schedule-content" id="sept-2025-schedule">
                         <div class="schedule-day">
@@ -2552,13 +2552,21 @@
                 tab.addEventListener('click', () => {
                     const target = tab.getAttribute('data-panel');
 
-                    retreatTabs.forEach(t => t.classList.remove('active'));
-                    retreatPanels.forEach(panel => panel.classList.remove('active'));
+                    retreatTabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-expanded', 'false');
+                    });
+                    retreatPanels.forEach(panel => {
+                        panel.classList.remove('active');
+                        panel.hidden = true;
+                    });
 
                     tab.classList.add('active');
+                    tab.setAttribute('aria-expanded', 'true');
                     const activePanel = document.getElementById(target);
                     if (activePanel) {
                         activePanel.classList.add('active');
+                        activePanel.hidden = false;
                     }
                 });
             });
