@@ -5,10 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strong Humans Foundation - Reclaiming Strength Through Natural Healing</title>
+    <meta name="description" content="The Strong Humans Foundation supports veterans, first responders, and their families through holistic retreats — combining recreational therapy, nutrition, and natural healing for TBI and PTSD recovery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thestronghumans.org/">
+    <meta property="og:title" content="Strong Humans Foundation">
+    <meta property="og:description" content="The Strong Humans Foundation supports veterans, first responders, and their families through holistic retreats — combining recreational therapy, nutrition, and natural healing for TBI and PTSD recovery.">
+    <meta property="og:image" content="https://thestronghumans.org/images/stronghumanshighres.jpeg">
+    <meta property="og:image:width" content="4096">
+    <meta property="og:image:height" content="4096">
+    <meta property="og:site_name" content="Strong Humans Foundation">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Strong Humans Foundation">
+    <meta name="twitter:description" content="The Strong Humans Foundation supports veterans, first responders, and their families through holistic retreats — combining recreational therapy, nutrition, and natural healing for TBI and PTSD recovery.">
+    <meta name="twitter:image" content="https://thestronghumans.org/images/stronghumanshighres.jpeg">
     <link rel="icon" type="image/png"
-        href="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/SHFlogo.jpg">
+        href="images/SHFlogo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&family=Source+Serif+Pro:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&family=Source+Serif+Pro:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap');
 
         * {
             margin: 0;
@@ -267,13 +283,8 @@
             animation: fadeIn 2s ease-out;
         }
 
-        /* On portrait mobile, the 16:9 video crops too aggressively with cover.
-           Switch to contain so the full frame is visible against the hero's black background. */
-        @media (max-width: 768px) and (orientation: portrait) {
-            .hero-video {
-                object-fit: contain;
-            }
-        }
+        /* Mobile portrait gets a dedicated 720x1280 portrait source via the <source media="..."> swap,
+           so cover (the base rule) fills the screen edge-to-edge with minimal cropping. */
 
         .hero-overlay {
             position: absolute;
@@ -360,13 +371,6 @@
 
             50% {
                 transform: translate(-30px, -30px) rotate(180deg);
-            }
-        }
-
-        @media (min-width: 1600px) {
-            .hero-video {
-                width: 100%;
-                height: 100%;
             }
         }
 
@@ -1509,10 +1513,6 @@
                 font-size: 1.25rem;
             }
 
-            .hero-video {
-                transform: translate(-50%, -50%) scale(1.5);
-            }
-
             .hero-button {
                 padding: 0.875rem 2rem;
                 font-size: 1rem;
@@ -1744,6 +1744,266 @@
             line-height: 1.7;
         }
 
+        /* Experience feature - dark transition block between Founder and Supporters */
+        .experience-feature {
+            position: relative;
+            overflow: hidden;
+            background: var(--primary-navy);
+            padding: 0;
+        }
+
+        .experience-photos {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            z-index: 0;
+        }
+
+        .experience-photos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.45) saturate(1.05);
+        }
+
+        .experience-photos::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(11, 25, 41, 0.55) 0%, rgba(42, 95, 63, 0.35) 100%);
+            pointer-events: none;
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .experience-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+            color: white;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .experience-content p {
+            font-family: 'Source Serif Pro', Georgia, serif;
+            font-size: clamp(1rem, 1.6vw, 1.2rem);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            opacity: 0.95;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .experience-content .cta-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .experience-content .cta-button {
+            background: var(--warm-gold);
+            color: var(--primary-navy);
+            padding: 0.85rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .experience-content .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: calc(0.85rem - 2px) calc(2rem - 2px);
+            box-shadow: none;
+        }
+
+        .experience-content .cta-button:hover {
+            transform: translateY(-2px);
+            background: #FFB347;
+        }
+
+        .experience-content .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .experience-photos {
+                grid-template-columns: 1fr;
+            }
+            .experience-photos img:nth-child(n+2) {
+                display: none;
+            }
+            .experience-content {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* Generous Supporters - compact tier rows */
+        .donor-tier-row {
+            display: grid;
+            grid-template-columns: minmax(190px, 230px) 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.875rem;
+            box-shadow: 0 2px 6px rgba(11, 25, 41, 0.06);
+            border-left: 3px solid var(--tier-accent, var(--text-light));
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .donor-tier-row:hover {
+            box-shadow: 0 4px 14px rgba(11, 25, 41, 0.1);
+        }
+
+        .donor-tier-row.diamond { --tier-accent: #5B9BD5; }
+        .donor-tier-row.platinum { --tier-accent: #6B7B8C; }
+        .donor-tier-row.gold { --tier-accent: #C8941E; }
+        .donor-tier-row.silver { --tier-accent: #94A3B8; }
+
+        .donor-tier-label {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .donor-tier-label .tier-icon {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .donor-tier-label .tier-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            letter-spacing: 0.02em;
+        }
+
+        .donor-tier-label .tier-range {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .donor-chips {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .donor-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.95rem;
+            background: #FAFBFC;
+            border: 1px solid #E5E7EB;
+            border-radius: 999px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .donor-chip:hover {
+            border-color: var(--primary-navy);
+            background: white;
+            color: var(--primary-navy);
+        }
+
+        .donor-chip.placeholder {
+            border-style: dashed;
+            color: var(--text-light);
+            font-weight: 400;
+            font-style: italic;
+            background: transparent;
+        }
+
+        .donor-chip.placeholder:hover {
+            border-style: solid;
+            color: var(--primary-navy);
+        }
+
+        .major-supporter-cta {
+            margin: 2rem auto 0;
+            padding: 2rem 2.5rem;
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(11, 25, 41, 0.06);
+            max-width: 720px;
+        }
+
+        .major-supporter-cta h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .major-supporter-cta p {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0 auto 1.25rem;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        .major-supporter-cta .cta-button {
+            background: var(--forest-green);
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .major-supporter-cta .cta-button:hover {
+            background: #1f4a2e;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .donor-tier-row {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+                padding: 0.875rem 1.125rem;
+            }
+            .major-supporter-cta {
+                padding: 1.5rem;
+            }
+        }
+
         /* Image Placeholder Styles - Easy to Replace */
         .image-placeholder {
             background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
@@ -1849,7 +2109,7 @@
         <div class="header-content">
             <div class="logo-container">
                 <div class="logo-circle">
-                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/SHFlogo.jpg"
+                    <img src="images/SHFlogo.jpg"
                         alt="Strong Humans Logo">
                 </div>
                 <a href="#" class="logo">Strong Humans Foundation</a>
@@ -1873,9 +2133,12 @@
     </header>
 
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/background.mp4"
-                type="video/mp4">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <!-- Mobile portrait: 720x1280 native vertical, ~2.6 MB -->
+            <source src="images/background-mobile.mp4"
+                media="(orientation: portrait) and (max-width: 768px)" type="video/mp4">
+            <!-- Desktop / landscape: full 4K master -->
+            <source src="images/background.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -1891,7 +2154,7 @@
             <h2 class="section-title">Our Guiding Light</h2>
 
             <div class="logo-large" style="max-width: 400px; margin: 2rem auto 3rem;">
-                <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/SHFlogo.jpg"
+                <img src="images/stronghumanshighres.jpeg"
                     alt="Strong Humans Foundation Logo" style="width: 100%; height: auto;">
             </div>
 
@@ -1927,7 +2190,7 @@
             <div class="founder-content"
                 style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center;">
                 <div class="founder-image" style="text-align: center;">
-                    <img src="https://raw.githubusercontent.com/Ryanofman/thestronghumans/main/images/founder-placeholder.jpg"
+                    <img src="images/founder-placeholder.jpg"
                         alt="Kenneth E. Huhman"
                         style="width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
                     <a href="https://www.google.com/search?client=safari&channel=iphone_bm&sca_esv=d16c61d435099b34&cs=0&sxsrf=AE3TifMLOQNnH25MynS6uPiofmrfv1ExlA:1751570390367&q=kenneth+huhman&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIetBXe9Do9DAuamxeB-puw_YsNKwkQmpdBnXmV_Wcu-Aa1nyVIpVrAVhGh9a5sak6oMDQ4808q0cXPOP9_Yx_69zFsU-T0VJpZe5p1xrwhUnpqnJSYzG0NIc4F39y8ywMgLRUobp4Qw0ACMF5qrvCEClJIcQC8ddLv3VcWFQ1qM5AYmzT6Jz-DtpXDNlyc45uxEY-YZk&sa=X&ved=2ahUKEwic3KqXtKGOAxWSmYkEHcTPNOoQ0pQJegQIDRAB&biw=390&bih=663&dpr=3"
@@ -1972,121 +2235,86 @@
         </div>
     </section>
 
+    <section class="experience-feature">
+        <div class="experience-photos" aria-hidden="true">
+            <img src="newimages/retreat5.jpg" alt="" loading="lazy">
+            <img src="newimages/retreat7.jpg" alt="" loading="lazy">
+            <img src="newimages/retreat8.jpg" alt="" loading="lazy">
+        </div>
+        <div class="experience-content">
+            <h2>Healing Happens Here</h2>
+            <p>Veterans, first responders, and their families finding strength together &mdash; through nature,
+                nutrition, and shared purpose.</p>
+            <div class="cta-row">
+                <a href="retreat.html" class="cta-button">Explore Retreats</a>
+                <a href="stories.html" class="cta-button secondary">Read Stories</a>
+            </div>
+        </div>
+    </section>
+
     <section class="donor-recognition"
-        style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%);">
+        style="padding: 5rem 2rem; background: linear-gradient(135deg, #f8fbff 0%, #fff5f0 100%);">
         <div class="section-container">
             <h2 class="section-title">Our Generous Supporters</h2>
             <p
-                style="text-align: center; max-width: 700px; margin: -1rem auto 3rem; font-family: 'Lato', sans-serif; color: var(--text-light); font-size: 1.15rem;">
+                style="text-align: center; max-width: 700px; margin: -1rem auto 2.5rem; font-family: 'Lato', sans-serif; color: var(--text-light); font-size: 1.05rem;">
                 We are deeply grateful to the individuals and organizations whose generous contributions make our
                 mission possible.
             </p>
 
-            <div class="donor-tiers" style="max-width: 1200px; margin: 0 auto;">
-
-                <div class="donor-tier" style="margin-bottom: 3rem;">
-                    <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
-                        <h3
-                            style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #4A5568; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                            <span style="font-size: 1.5rem;">💎</span> Diamond Donors
-                        </h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">$15,000 - $20,000</p>
+            <div class="donor-tiers" style="max-width: 880px; margin: 0 auto;">
+                <div class="donor-tier-row diamond">
+                    <div class="donor-tier-label">
+                        <span class="tier-icon" aria-hidden="true">💎</span>
+                        <span class="tier-name">Diamond</span>
+                        <span class="tier-range">$15,000 – $20,000</span>
                     </div>
-                    <div class="donor-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="donor-card"
-                            style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 2px solid #B9D6F3; transition: all 0.3s;">
-                            <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
-                                <h4
-                                    style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                    Coming Soon</h4>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">Be our first Diamond supporter
-                                </p>
-                            </a>
-                        </div>
+                    <div class="donor-chips">
+                        <a href="#donate" class="donor-chip placeholder">Be our first Diamond supporter</a>
                     </div>
                 </div>
 
-                <div class="donor-tier" style="margin-bottom: 3rem;">
-                    <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
-                        <h3
-                            style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: #6B7280; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                            <span style="font-size: 1.4rem;">🏆</span> Platinum Donors
-                        </h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">$10,000 - $15,000</p>
+                <div class="donor-tier-row platinum">
+                    <div class="donor-tier-label">
+                        <span class="tier-icon" aria-hidden="true">🏆</span>
+                        <span class="tier-name">Platinum</span>
+                        <span class="tier-range">$10,000 – $15,000</span>
                     </div>
-                    <div class="donor-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="donor-card"
-                            style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 2px solid #E5E7EB; transition: all 0.3s;">
-                            <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
-                                <h4
-                                    style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem;">
-                                    Your Organization Here</h4>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">Join our Platinum supporters</p>
-                            </a>
-                        </div>
+                    <div class="donor-chips">
+                        <a href="#donate" class="donor-chip placeholder">Join our Platinum supporters</a>
                     </div>
                 </div>
 
-                <div class="donor-tier" style="margin-bottom: 3rem;">
-                    <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
-                        <h3
-                            style="font-family: 'Montserrat', sans-serif; font-size: 1.6rem; color: #D97706; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                            <span style="font-size: 1.3rem;">🥇</span> Gold Donors
-                        </h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">$5,000 - $10,000</p>
+                <div class="donor-tier-row gold">
+                    <div class="donor-tier-label">
+                        <span class="tier-icon" aria-hidden="true">🥇</span>
+                        <span class="tier-name">Gold</span>
+                        <span class="tier-range">$5,000 – $10,000</span>
                     </div>
-                    <div class="donor-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
-                        <div class="donor-card"
-                            style="background: white; padding: 1.75rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 2px solid #FED7AA; transition: all 0.3s;">
-                            <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
-                                <h4
-                                    style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin-bottom: 0.25rem;">
-                                    Become a Gold Donor</h4>
-                            </a>
-                        </div>
+                    <div class="donor-chips">
+                        <a href="#donate" class="donor-chip placeholder">Become a Gold Donor</a>
                     </div>
                 </div>
 
-                <div class="donor-tier">
-                    <div class="tier-header" style="text-align: center; margin-bottom: 2rem;">
-                        <h3
-                            style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: #6B7280; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                            <span style="font-size: 1.2rem;">🥈</span> Silver Donors
-                        </h3>
-                        <p style="color: var(--text-light); font-size: 0.95rem;">$1,000 - $5,000</p>
+                <div class="donor-tier-row silver">
+                    <div class="donor-tier-label">
+                        <span class="tier-icon" aria-hidden="true">🥈</span>
+                        <span class="tier-name">Silver</span>
+                        <span class="tier-range">$1,000 – $5,000</span>
                     </div>
-                    <div class="donor-grid"
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
-                        <div class="donor-card"
-                            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; border: 1px solid #E5E7EB; transition: all 0.3s;">
-                            <a href="#" target="_blank" style="text-decoration: none; color: var(--primary-navy);">
-                                <h4
-                                    style="font-family: 'Montserrat', sans-serif; font-size: 1rem; margin-bottom: 0.25rem;">
-                                    Join Our Silver Circle</h4>
-                            </a>
-                        </div>
+                    <div class="donor-chips">
+                        <a href="#donate" class="donor-chip placeholder">Join our Silver Circle</a>
                     </div>
                 </div>
-
             </div>
 
-            <div
-                style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
-                <h3
-                    style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--primary-navy); margin-bottom: 1rem;">
-                    Become a Major Supporter</h3>
-                <p
-                    style="font-family: 'Lato', sans-serif; font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="major-supporter-cta">
+                <h3>Become a Major Supporter</h3>
+                <p>
                     Your generous contribution directly supports veterans and first responders on their journey to
-                    healing. Join our community of supporters making a lasting impact.
+                    healing.
                 </p>
-                <a href="#donate" class="cta-button"
-                    style="background: var(--forest-green); color: white; padding: 1rem 3rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block;">
-                    Make a Major Gift
-                </a>
+                <a href="#donate" class="cta-button">Make a Major Gift</a>
             </div>
         </div>
     </section>
@@ -2335,118 +2563,6 @@
             }
         });
 
-        // Donation Form Logic
-        let selectedAmount = 100;
-        const amountButtons = document.querySelectorAll('.amount-btn');
-        const customAmountInput = document.querySelector('.custom-amount-input');
-        const customAmountField = document.getElementById('customAmount');
-        const donateButton = document.getElementById('donateButton');
-        const frequencyInputs = document.querySelectorAll('input[name="frequency"]');
-
-        // Handle amount selection
-        if (amountButtons.length) {
-            amountButtons.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    amountButtons.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    if (this.dataset.amount === 'custom') {
-                        customAmountInput.style.display = 'block';
-                        customAmountField.focus();
-                        selectedAmount = parseInt(customAmountField.value) || 0;
-                    } else {
-                        customAmountInput.style.display = 'none';
-                        selectedAmount = parseInt(this.dataset.amount);
-                    }
-                    updateDonateButton();
-                });
-            });
-        }
-
-        // Handle custom amount input
-        if (customAmountField) {
-            customAmountField.addEventListener('input', function () {
-                selectedAmount = parseInt(this.value) || 0;
-                updateDonateButton();
-            });
-        }
-
-        // Handle frequency change
-        if (frequencyInputs.length) {
-            frequencyInputs.forEach(input => {
-                input.addEventListener('change', updateDonateButton);
-            });
-        }
-
-        // Update donate button text
-        function updateDonateButton() {
-            if (donateButton) {
-                const frequency = document.querySelector('input[name="frequency"]:checked').value;
-                const frequencyText = frequency === 'monthly' ? '/month' : '';
-                donateButton.textContent = selectedAmount > 0 ? `Donate ${selectedAmount}${frequencyText}` : 'Enter amount';
-            }
-        }
-
-        // Stripe Configuration
-        // IMPORTANT: Replace with your actual Stripe publishable key
-        const STRIPE_PUBLISHABLE_KEY = 'pk_test_YOUR_PUBLISHABLE_KEY_HERE';
-
-        // Initialize Stripe
-        let stripe = null;
-        if (typeof Stripe !== 'undefined' && STRIPE_PUBLISHABLE_KEY !== 'pk_test_YOUR_PUBLISHABLE_KEY_HERE') {
-            stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
-        }
-
-        // Handle donation
-        if (donateButton) {
-            donateButton.addEventListener('click', async function () {
-                if (selectedAmount <= 0) {
-                    alert('Please select or enter a donation amount.');
-                    return;
-                }
-
-                if (!stripe) {
-                    alert('Stripe is not configured. Please add your Stripe publishable key to enable donations.');
-                    return;
-                }
-
-                // Disable button and show loading state
-                this.disabled = true;
-                this.textContent = 'Processing...';
-
-                try {
-                    // Create a checkout session on your server
-                    const response = await fetch('/create-checkout-session', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            amount: selectedAmount,
-                            frequency: document.querySelector('input[name="frequency"]:checked').value
-                        }),
-                    });
-
-                    const session = await response.json();
-
-                    // Redirect to Stripe Checkout
-                    const result = await stripe.redirectToCheckout({
-                        sessionId: session.id,
-                    });
-
-                    if (result.error) {
-                        alert(result.error.message);
-                    }
-                } catch (error) {
-                    alert('An error occurred. Please try again or contact us directly.');
-                    console.error('Donation error:', error);
-                } finally {
-                    // Re-enable button
-                    this.disabled = false;
-                    updateDonateButton();
-                }
-            });
-        }
     </script>
 </body>
 
