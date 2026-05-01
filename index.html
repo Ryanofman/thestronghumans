@@ -2588,6 +2588,44 @@
             }
         });
 
+        // Force hero video to autoplay on mobile (iOS Safari often shows the play button
+        // when autoplay is blocked — even with the autoplay attribute set in markup).
+        (function () {
+            const video = document.querySelector('.hero-video');
+            if (!video) return;
+            // Belt-and-suspenders: re-assert the autoplay attributes from JS in case
+            // browser quirks ignored the markup ones.
+            video.muted = true;
+            video.defaultMuted = true;
+            video.playsInline = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+
+            const tryPlay = () => {
+                const p = video.play();
+                if (p && typeof p.catch === 'function') {
+                    p.catch(() => { /* will retry on first interaction */ });
+                }
+            };
+            tryPlay();
+
+            // If the first attempt was blocked, kick it off on the first user gesture.
+            const retryOnGesture = () => {
+                tryPlay();
+                ['touchstart', 'click', 'scroll'].forEach(ev =>
+                    document.removeEventListener(ev, retryOnGesture, { passive: true })
+                );
+            };
+            ['touchstart', 'click', 'scroll'].forEach(ev =>
+                document.addEventListener(ev, retryOnGesture, { passive: true, once: true })
+            );
+
+            // Also retry once metadata is loaded and once the page has fully loaded —
+            // covers cellular and slow network cases.
+            video.addEventListener('loadedmetadata', tryPlay, { once: true });
+            window.addEventListener('load', tryPlay, { once: true });
+        })();
+
     </script>
 </body>
 
