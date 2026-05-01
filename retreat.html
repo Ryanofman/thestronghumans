@@ -1780,17 +1780,17 @@
         .experience-photos {
             position: absolute;
             inset: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
             z-index: 0;
+            overflow: hidden;
         }
 
         .experience-photos img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.45) saturate(1.05);
+            object-position: center;
+            filter: brightness(0.5) saturate(1.05);
+            display: block;
         }
 
         .experience-photos::after {
@@ -1870,12 +1870,6 @@
         }
 
         @media (max-width: 768px) {
-            .experience-photos {
-                grid-template-columns: 1fr;
-            }
-            .experience-photos img:nth-child(n+2) {
-                display: none;
-            }
             .experience-content {
                 padding: 4rem 1.5rem;
             }
