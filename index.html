@@ -1928,13 +1928,16 @@
         /* Generous Supporters - compact tier rows */
         /* Generous Supporters - aesthetic tier cards */
         .donor-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
             margin: 3rem auto;
         }
 
         .donor-tier-row {
+            flex: 1 1 280px;
+            max-width: 320px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -2424,55 +2427,6 @@
                     healing.
                 </p>
                 <a href="#donate" class="cta-button">Make a Major Gift</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="partners" id="partners">
-        <div class="section-container">
-            <h2 class="section-title">Our Partners</h2>
-            <div class="partners-showcase">
-                <a href="https://www.surfbrigade.org" target="_blank" class="partner-item" aria-label="Surf Brigade">
-                    <div class="partner-logo-horizontal">
-                        <img src="images/surf-brigade-logo.png"
-                            alt="Surf Brigade">
-                    </div>
-                </a>
-
-                <a href="https://coastxcoast.org/donate" target="_blank" class="partner-item" aria-label="Coast II Coast">
-                    <div class="partner-logo-horizontal">
-                        <img src="images/coast-iii-coast-logo.png"
-                            alt="Coast II Coast">
-                    </div>
-                </a>
-
-                <a href="https://www.taskforcedagger.org" target="_blank" class="partner-item" aria-label="Task Force Dagger">
-                    <div class="partner-logo-horizontal">
-                        <img src="images/TFDlogo.png"
-                            alt="Task Force Dagger">
-                    </div>
-                </a>
-
-                <a href="https://combatcontrolfoundation.org" target="_blank" class="partner-item" aria-label="Combat Control Foundation">
-                    <div class="partner-logo-horizontal">
-                        <img src="images/CCFlogo.jpg"
-                            alt="Combat Control Foundation">
-                    </div>
-                </a>
-
-                <a href="https://www.reconfoundation.org" target="_blank" class="partner-item" aria-label="Reconnaissance Foundation">
-                    <div class="partner-logo-horizontal">
-                        <img src="images/RFlogo.jpg"
-                            alt="Reconnaissance Foundation">
-                    </div>
-                </a>
-
-                <a href="https://www.abtglobal.com" target="_blank" rel="noopener" class="partner-item" aria-label="Abt Global">
-                    <div class="partner-logo-horizontal">
-                        <img src="images/abt-logo.png"
-                            alt="Abt Global">
-                    </div>
-                </a>
             </div>
         </div>
     </section>
