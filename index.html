@@ -1067,6 +1067,24 @@
             cursor: pointer;
         }
 
+        .donation-qr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 2rem 0 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        .donation-qr img {
+            width: 180px;
+            height: 180px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
         .paypal-form {
             display: contents;
         }
@@ -2438,28 +2456,16 @@
                 <p>Empower a strong future. Donate today!</p>
 
                 <div class="donation-container">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="paypal-form">
-                        <input type="hidden" name="cmd" value="_donations">
-                        <input type="hidden" name="business" value="thestronghumans@gmail.com">
-                        <input type="hidden" name="item_name" value="Strong Humans Foundation Support">
-                        <input type="hidden" name="currency_code" value="USD">
-                        <input type="hidden" name="no_recurring" value="0">
-                        
-                        <div class="donation-options">
-                            <label class="monthly-toggle">
-                                <input type="checkbox" name="recurring" value="1">
-                                <span>Make this a monthly donation</span>
-                            </label>
-                        </div>
+                    <a href="https://www.zeffy.com/en-US/donation-form/sponsor-a-veteran-or-first-responder-2"
+                        target="_blank" rel="noopener" class="cta-button paypal-donate">
+                        Donate Now
+                    </a>
 
-                        <button type="submit" class="cta-button paypal-donate">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                                <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72c.044-.244.268-.413.52-.413h7.114c2.96 0 5.26.938 6.845 2.788 1.273 1.488 1.776 3.584 1.486 6.233-.36 3.3-2.48 5.765-5.774 6.74-.83.245-1.73.368-2.678.368H9.88a.64.64 0 0 0-.633.513l-.928 5.388z" />
-                                <path d="M20.283 8.487c-.3 2.747-2.13 4.796-4.968 5.614-.73.21-1.52.316-2.35.316h-2.214a.562.562 0 0 0-.556.45l-1.166 6.755a.562.562 0 0 1-.555.45H6.097c-.309 0-.558-.25-.504-.559l.103-.597h1.98a.641.641 0 0 0 .633-.513l.928-5.388a.641.641 0 0 1 .633-.513h2.577c.948 0 1.848-.123 2.678-.368 3.294-.975 5.414-3.44 5.774-6.74.144-1.32.03-2.457-.416-3.387.796 1.016 1.104 2.374.8 4.13z" />
-                            </svg>
-                            Donate via PayPal
-                        </button>
-                    </form>
+                    <div class="donation-qr">
+                        <img src="images/zeffy-donate-qr.png" alt="QR code to donate to The Strong Humans Foundation on Zeffy"
+                            width="180" height="180" loading="lazy">
+                        <span>Or scan to give from your phone</span>
+                    </div>
 
                     <div class="donation-statement">
                         The Strong Humans is a registered 501(c)(3) nonprofit organization. All donations are tax-exempt
@@ -2477,7 +2483,7 @@
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                             <path d="M7 11V7a5 5 0 0110 0v4"></path>
                         </svg>
-                        Secure donation powered by PayPal
+                        Secure donation powered by Zeffy
                     </p>
                 </div>
 
